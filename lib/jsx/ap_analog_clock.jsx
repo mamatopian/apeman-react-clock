@@ -1,0 +1,172 @@
+/**
+ * Abstract clock.
+ * @constructor ApAnalogClock
+ */
+
+"use strict";
+
+const React = require('react'),
+    ReactDOM = require('react-dom'),
+    classnames = require('classnames'),
+    ApClock = require('./ap_clock'),
+    PureRenderMixin = require('react-addons-pure-render-mixin'),
+    chopcal = require('chopcal'),
+    numcal = require('numcal'),
+    types = React.PropTypes;
+
+/** @lends ApAnalogClock */
+let ApAnalogClock = React.createClass({
+
+    //--------------------
+    // Specs
+    //--------------------
+
+    propTypes: {
+        boardLetters: types.array
+    },
+
+    mixins: [
+        PureRenderMixin
+    ],
+
+    statics: {
+        _angleForValue: function (value, max) {
+            let rate = (value % max) / max;
+            return chopcal.round(rate * 360, 0.1);
+        },
+        hourHandAngle: function (date) {
+            let hours = date.getHours();
+            return ApAnalogClock._angleForValue(hours, 12);
+        },
+        minuteHandAngle: function (date) {
+            let minutes = date.getMinutes();
+            return ApAnalogClock._angleForValue(minutes, 60);
+        },
+        secondHandAngle: function (date) {
+            let seconds = date.getSeconds();
+            return ApAnalogClock._angleForValue(seconds, 60);
+        },
+        letterAngle: function (i, count) {
+            return ApAnalogClock._angleForValue(i, count);
+        }
+    },
+
+    getInitialState: function () {
+        return {
+            looping: false,
+            hour: 0,
+            minute: 0,
+            second: 0,
+            size: 256
+        };
+    },
+
+    getDefaultProps: function () {
+        return {
+            boardLetters: '12,1,2,3,4,5,6,7,8,9,10,11'.split(',')
+        };
+    },
+
+    render: function () {
+        let s = this,
+            state = s.state,
+            props = s.props;
+
+        let letters = props.boardLetters.map((letter, i, letters)=> {
+            let angle = ApAnalogClock.letterAngle(i, letters.length);
+
+            let containerStyle = {transform: `rotate(${angle}deg)`},
+                letterStyle = {transform: `rotate${angle * -1}deg`};
+            return (
+                <span className="ap-analog-letter-container"
+                      key={"ap-analog-letter-" + i}
+                      style={containerStyle}>
+                    <span className="ap-analog-letter" style={letterStyle}>{letter}</span>
+                </span>
+            );
+        });
+
+        return (
+            <ApClock className={classnames("ap-analog-clock", props.className)}>
+                <div className="ap-analog-clock-board" style={{width:state.size, height:state.size}}>
+                    hour={state.hour}
+                    minute={state.minute}
+                    second={state.second}
+                    <div>
+                        {letters}
+                    </div>
+                </div>
+            </ApClock>
+        );
+    },
+
+
+    //--------------------
+    // Lifecycle
+    //--------------------
+
+    componentWillMount: function () {
+        let s = this;
+        s._looping = true;
+    },
+
+    componentDidMount: function () {
+        let s = this,
+            props = s.props;
+
+        function _loop() {
+            if (!s._looping) {
+                return;
+            }
+            let now = new Date();
+            s.setState({
+                hour: ApAnalogClock.hourHandAngle(now),
+                minute: ApAnalogClock.minuteHandAngle(now),
+                second: ApAnalogClock.secondHandAngle(now)
+            });
+            window.requestAnimationFrame(_loop);
+        }
+
+        window.addEventListener('resize', s.resizeClock);
+        _loop();
+        s.resizeClock();
+
+
+    },
+
+    componentWillReceiveProps: function (nextProps) {
+        let s = this;
+    },
+
+    componentWillUpdate: function (nextProps, nextState) {
+        let s = this;
+    },
+
+    componentDidUpdate: function (prevProps, prevState) {
+        let s = this;
+    },
+
+    componentWillUnmount: function () {
+        let s = this;
+        window.removeEventListener('resize', s.resizeClock);
+        s._looping = false;
+    },
+
+    //------------------
+    // Helper
+    //------------------
+
+    resizeClock: function () {
+        let s = this,
+            elm = ReactDOM.findDOMNode(s);
+        let size = numcal.min(elm.offsetWidth, elm.offsetHeight);
+        s.setState({
+            size: size
+        });
+    }
+    //------------------
+    // Private
+    //------------------
+});
+
+module.exports = ApAnalogClock;
