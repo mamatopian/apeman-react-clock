@@ -1,5 +1,5 @@
 /**
- * Abstract clock.
+ * Analog clock.
  * @constructor ApAnalogClock
  */
 
@@ -12,7 +12,9 @@ const React = require('react'),
     PureRenderMixin = require('react-addons-pure-render-mixin'),
     chopcal = require('chopcal'),
     numcal = require('numcal'),
-    types = React.PropTypes;
+    types = React.PropTypes,
+    ApAnalogClockHand = require('./ap_analog_clock_hand'),
+    ApAnalogClockLetter = require('./ap_analog_clock_letter');
 
 /** @lends ApAnalogClock */
 let ApAnalogClock = React.createClass({
@@ -74,24 +76,21 @@ let ApAnalogClock = React.createClass({
 
         let letters = props.boardLetters.map((letter, i, letters)=> {
             let angle = ApAnalogClock.letterAngle(i, letters.length);
-
-            let containerStyle = {transform: `rotate(${angle}deg)`},
-                letterStyle = {transform: `rotate${angle * -1}deg`};
             return (
-                <span className="ap-analog-letter-container"
-                      key={"ap-analog-letter-" + i}
-                      style={containerStyle}>
-                    <span className="ap-analog-letter" style={letterStyle}>{letter}</span>
-                </span>
+                <ApAnalogClockLetter key={"ap-analog-letter-" + i}
+                                     letter={letter}
+                                     angle={angle}></ApAnalogClockLetter>
             );
         });
 
         return (
             <ApClock className={classnames("ap-analog-clock", props.className)}>
                 <div className="ap-analog-clock-board" style={{width:state.size, height:state.size}}>
-                    hour={state.hour}
-                    minute={state.minute}
-                    second={state.second}
+                    <div className="ap-analog-clock-board-inner">
+                        <ApAnalogClockHand width={4} heightRate={0.8} angle={state.hour}></ApAnalogClockHand>
+                        <ApAnalogClockHand width={4} heightRate={1} angle={state.minute}></ApAnalogClockHand>
+                        <ApAnalogClockHand width={2} heightRate={1} angle={state.second}></ApAnalogClockHand>
+                    </div>
                     <div>
                         {letters}
                     </div>

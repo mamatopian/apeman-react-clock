@@ -36,6 +36,8 @@ let ApAnalogClockStyle = React.createClass({
             maxSize = props.maxSize,
             color = props.color;
 
+        let boardPading = 18;
+
         let data = {
 
                 '.ap-analog-clock': {
@@ -54,7 +56,7 @@ let ApAnalogClockStyle = React.createClass({
                     position: `relative`,
                     borderRadius: `50%`
                 },
-                '.ap-analog-letter-container': {
+                '.ap-analog-letter': {
                     height: `50%`,
                     width: `10%`,
                     position: `absolute`,
@@ -63,10 +65,41 @@ let ApAnalogClockStyle = React.createClass({
                     display: `inline-block`,
                     transformOrigin: `50% 100%`
                 },
-                '.ap-analog-letter': {
+                '.ap-analog-letter-title': {
                     position: `absolute`,
                     left: `0`,
                     top: `0`,
+                    display: `inline-block`
+                },
+                '.ap-analog-clock-board-inner': {
+                    position: `absolute`,
+                    left: boardPading,
+                    top: boardPading,
+                    right: boardPading,
+                    bottom: boardPading
+                },
+                '.ap-analog-clock-hand': {
+                    height: `50%`,
+                    width: `10%`,
+                    position: `absolute`,
+                    left: `45%`,
+                    top: `0`,
+                    display: `inline-block`,
+                    transformOrigin: `50% 100%`
+                },
+                '.ap-analog-clock-hand-bar-container': {
+                    position: `absolute`,
+                    left: 0,
+                    top: 0,
+                    right: 0,
+                    bottom: -8,
+                    display: `inline-block`,
+                    textAlign: `center`
+                },
+                '.ap-analog-clock-hand-bar': {
+                    background: `${color}`,
+                    width: 24,
+                    height: '100%',
                     display: `inline-block`
                 }
             },
