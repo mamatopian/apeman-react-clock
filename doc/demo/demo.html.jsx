@@ -11,6 +11,7 @@ const React = require('react'),
 const Demo = require('./demo.component.js'),
     ApClockStyle = require('../../lib/ap_clock_style'),
     ApAnalogClockStyle = require('../../lib/ap_analog_clock_style'),
+    ApDigitalClockStyle = require('../../lib/ap_digital_clock_style'),
     basic = require('apeman-react-basic'),
     ApStyle = basic.ApStyle,
     ApHead = basic.ApHead,
@@ -27,6 +28,7 @@ module.exports = (
             <ApStyle data={fs.readFileSync(stylesheets.reactDemo).toString()}></ApStyle>
             <ApClockStyle></ApClockStyle>
             <ApAnalogClockStyle></ApAnalogClockStyle>
+            <ApDigitalClockStyle></ApDigitalClockStyle>
         </ApHead>
         <body>
         <div id="demo-style"></div>

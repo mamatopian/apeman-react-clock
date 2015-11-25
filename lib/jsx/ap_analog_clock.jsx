@@ -55,7 +55,6 @@ let ApAnalogClock = React.createClass({
 
     getInitialState: function () {
         return {
-            looping: false,
             hour: 0,
             minute: 0,
             second: 0,
@@ -129,8 +128,6 @@ let ApAnalogClock = React.createClass({
         window.addEventListener('resize', s.resizeClock);
         _loop();
         s.resizeClock();
-
-
     },
 
     componentWillReceiveProps: function (nextProps) {

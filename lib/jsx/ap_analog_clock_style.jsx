@@ -1,5 +1,5 @@
 /**
- * Style for ApClock.
+ * Style for ApAnalogClock.
  * @constructor ApAnalogClockStyle
  */
 
@@ -25,7 +25,8 @@ let ApAnalogClockStyle = React.createClass({
             style: {},
             minSize: 80,
             maxSize: 480,
-            color: '#555'
+            color: '#555',
+            backgroundColor: '#FFF'
         }
     },
     render: function () {
@@ -34,12 +35,12 @@ let ApAnalogClockStyle = React.createClass({
 
         let minSize = props.minSize,
             maxSize = props.maxSize,
-            color = props.color;
+            color = props.color,
+            backgroundColor = props.backgroundColor;
 
-        let boardPading = 18;
+        let boardPadding = 18;
 
         let data = {
-
                 '.ap-analog-clock': {
                     minWidth: minSize,
                     minHeight: minSize,
@@ -54,7 +55,15 @@ let ApAnalogClockStyle = React.createClass({
                     border: `2px solid ${color}`,
                     display: `inline-block`,
                     position: `relative`,
-                    borderRadius: `50%`
+                    borderRadius: `50%`,
+                    backgroundColor: `${backgroundColor}`
+                },
+                '.ap-analog-clock-board-inner': {
+                    position: `absolute`,
+                    left: boardPadding,
+                    top: boardPadding,
+                    right: boardPadding,
+                    bottom: boardPadding
                 },
                 '.ap-analog-letter': {
                     height: `50%`,
@@ -70,13 +79,6 @@ let ApAnalogClockStyle = React.createClass({
                     left: `0`,
                     top: `0`,
                     display: `inline-block`
-                },
-                '.ap-analog-clock-board-inner': {
-                    position: `absolute`,
-                    left: boardPading,
-                    top: boardPading,
-                    right: boardPading,
-                    bottom: boardPading
                 },
                 '.ap-analog-clock-hand': {
                     height: `50%`,
