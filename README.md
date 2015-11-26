@@ -69,6 +69,8 @@ Demo
 
 [Live demo][demo_url] is hosted on GitHub Pages.
 
+[![Demo Image](./doc/images/screenshot.png)][demo_url]
+
 [demo_url]: http://apeman-react-labo.github.io/apeman-react-clock/demo/demo.html
 
 
@@ -114,14 +116,16 @@ Components
 
 ### ApClock
 
+Abstract clock component.
+
 **Props**
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
 
-
-
 ### ApClockStyle
+
+Style for ApClock
 
 **Props**
 
@@ -129,6 +133,19 @@ Components
 | ---- | ---- | ------- | ----------- |
 | scoped | bool | false | Render as scoped style. |
 | style | object | {} | Style object. |
+
+
+### ApAnalogClock
+
+Analog clock.
+
+**Props**
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| boardLetters | Array | [12,0,1...11] | Letters to display at clock. |
+
+
+
 
 
 

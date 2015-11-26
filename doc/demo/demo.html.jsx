@@ -29,6 +29,19 @@ module.exports = (
             <ApClockStyle></ApClockStyle>
             <ApAnalogClockStyle></ApAnalogClockStyle>
             <ApDigitalClockStyle></ApDigitalClockStyle>
+            <ApStyle data={
+`
+@font-face {
+    font-family: digital-clock;
+    src: url(digital-clock.ttf);
+}
+.ap-digital-clock {
+    font-family: digital-clock;
+}
+`
+
+            }>
+            </ApStyle>
         </ApHead>
         <body>
         <div id="demo-style"></div>

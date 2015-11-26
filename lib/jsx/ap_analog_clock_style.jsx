@@ -18,7 +18,7 @@ let ApAnalogClockStyle = React.createClass({
         minSize: types.number,
         maxSize: types.number,
         color: types.string,
-        backgroundColor: types.string,
+        backgroundColor: types.string
     },
     getDefaultProps: function () {
         return {
@@ -49,7 +49,8 @@ let ApAnalogClockStyle = React.createClass({
                     maxHeight: maxSize,
                     display: `block`,
                     margin: `0 auto`,
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    position: `relative`
                 },
                 '.ap-analog-clock-board': {
                     width: `100%`,

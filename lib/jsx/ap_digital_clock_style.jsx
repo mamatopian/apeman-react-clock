@@ -17,7 +17,8 @@ let ApDigitalClock = React.createClass({
         style: types.object,
         minSize: types.number,
         maxSize: types.number,
-        color: types.string
+        color: types.string,
+        backgroundColor: types.string
 
     },
     getDefaultProps: function () {
@@ -26,7 +27,8 @@ let ApDigitalClock = React.createClass({
             style: {},
             minSize: 80,
             maxSize: 480,
-            color: '#555'
+            color: '#555',
+            backgroundColor: '#FFF'
         }
     },
     render: function () {
@@ -52,8 +54,9 @@ let ApDigitalClock = React.createClass({
                 '.ap-digital-clock-board': {
                     backgroundColor: backgroundColor,
                     display: `inline-block`,
-                    border: `1px solid ${color}`,
-                    position: `relative`
+                    border: `2px solid ${color}`,
+                    position: `relative`,
+                    background: `${backgroundColor}`
                 },
                 '.ap-digital-clock-board-inner': {
                     position: `absolute`,
@@ -61,6 +64,12 @@ let ApDigitalClock = React.createClass({
                     right: 0,
                     top: `30%`,
                     bottom: `30%`
+                },
+                '.ap-digital-clock-main': {
+                    display: `inline-block`
+                },
+                '.ap-digital-clock-sub': {
+                    display: `inline-block`
                 }
             },
             smallMediaData = {},

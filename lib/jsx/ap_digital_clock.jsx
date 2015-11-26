@@ -65,10 +65,12 @@ let ApDigitalLock = React.createClass({
             },
             mainStyle = {
                 lineHeight: `${size * 0.4}px`,
-                fontSize: `${size * 0.3}px`
+                fontSize: `${parseInt(size * 0.28)}px`
             },
-            subStyle = {};
-
+            subStyle = {
+                fontSize: `${parseInt(size * 0.16)}px`,
+                margin: `0 4px`
+            };
 
         return (
             <ApClock className={classnames("ap-digital-clock", props.className)}>
