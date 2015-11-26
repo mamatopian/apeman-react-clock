@@ -49,7 +49,7 @@ let ApDigitalLock = React.createClass({
             minutes: "00",
             seconds: "00",
             size: 256,
-            labelWidth: 128
+            labelWidth: 256
         }
     },
 
@@ -77,19 +77,21 @@ let ApDigitalLock = React.createClass({
         return (
             <ApClock className={classnames("ap-digital-clock", props.className)}>
                 <div className="ap-digital-clock-board" style={boardStyle}>
+                    <div className="ap-digital-clock-dummy-text"
+                         style={{lineHeight:`${size}px`}}
+                    >f
+                    </div>
                     <div className="ap-digital-clock-board-inner">
-                        <div className="ap-digital-clock-display">
-                            <ApDigitalClockMainDisplay hours={state.hours}
-                                                       minutes={state.minutes}
-                                                       seconds={state.seconds}
-                                                       fontSize={mainFontSize}
-                                                       onSizeChange={s.onMainDisplaySizeChange}
-                            />
-                            <ApDigitalClockSubDisplay day={state.day}
-                                                      width={state.labelWidth}
-                                                      fontSize={subFontSize}
-                            />
-                        </div>
+                        <ApDigitalClockMainDisplay hours={state.hours}
+                                                   minutes={state.minutes}
+                                                   seconds={state.seconds}
+                                                   fontSize={mainFontSize}
+                                                   onSizeChange={s.onMainDisplaySizeChange}
+                        />
+                        <ApDigitalClockSubDisplay day={state.day}
+                                                  width={state.labelWidth}
+                                                  fontSize={subFontSize}
+                        />
                     </div>
                 </div>
             </ApClock>

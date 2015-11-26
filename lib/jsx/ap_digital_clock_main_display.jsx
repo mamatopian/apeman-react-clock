@@ -36,14 +36,11 @@ let ApDigitalClockMainDisplay = React.createClass({
             state = s.state,
             props = s.props;
 
-        let fontSize = props.fontSize,
-            lineHeight = fontSize * 1.25;
+        let fontSize = props.fontSize;
 
         let mainStyle = {
-            lineHeight: `${lineHeight}px`,
             fontSize: `${fontSize}px`
         }, detailStyle = {
-            lineHeight: `${lineHeight}px`,
             fontSize: `${fontSize * 0.6}px`,
             display: `inline-block`,
             minWidth: `${state.detailWidth}px`

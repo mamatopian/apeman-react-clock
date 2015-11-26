@@ -462,7 +462,7 @@ let ApDigitalLock = React.createClass({
             minutes: "00",
             seconds: "00",
             size: 256,
-            labelWidth: 128
+            labelWidth: 256
         };
     },
 
@@ -495,21 +495,24 @@ let ApDigitalLock = React.createClass({
                 { className: 'ap-digital-clock-board', style: boardStyle },
                 React.createElement(
                     'div',
+                    { className: 'ap-digital-clock-dummy-text',
+                        style: { lineHeight: `${ size }px` }
+                    },
+                    'f'
+                ),
+                React.createElement(
+                    'div',
                     { className: 'ap-digital-clock-board-inner' },
-                    React.createElement(
-                        'div',
-                        { className: 'ap-digital-clock-display' },
-                        React.createElement(ApDigitalClockMainDisplay, { hours: state.hours,
-                            minutes: state.minutes,
-                            seconds: state.seconds,
-                            fontSize: mainFontSize,
-                            onSizeChange: s.onMainDisplaySizeChange
-                        }),
-                        React.createElement(ApDigitalClockSubDisplay, { day: state.day,
-                            width: state.labelWidth,
-                            fontSize: subFontSize
-                        })
-                    )
+                    React.createElement(ApDigitalClockMainDisplay, { hours: state.hours,
+                        minutes: state.minutes,
+                        seconds: state.seconds,
+                        fontSize: mainFontSize,
+                        onSizeChange: s.onMainDisplaySizeChange
+                    }),
+                    React.createElement(ApDigitalClockSubDisplay, { day: state.day,
+                        width: state.labelWidth,
+                        fontSize: subFontSize
+                    })
                 )
             )
         );
@@ -619,15 +622,12 @@ let ApDigitalClockMainDisplay = React.createClass({
             state = s.state,
             props = s.props;
 
-        let fontSize = props.fontSize,
-            lineHeight = fontSize * 1.25;
+        let fontSize = props.fontSize;
 
         let mainStyle = {
-            lineHeight: `${ lineHeight }px`,
             fontSize: `${ fontSize }px`
         },
             detailStyle = {
-            lineHeight: `${ lineHeight }px`,
             fontSize: `${ fontSize * 0.6 }px`,
             display: `inline-block`,
             minWidth: `${ state.detailWidth }px`
@@ -717,7 +717,8 @@ module.exports = ApDigitalClockMainDisplay;
 
 const React = require('react'),
       types = React.PropTypes,
-      ReactDOM = require('react-dom');
+      ReactDOM = require('react-dom'),
+      classnames = require('classnames');
 
 /** @lends ApDigitalClockSubDisplay */
 let ApDigitalClockSubDisplay = React.createClass({
@@ -738,12 +739,10 @@ let ApDigitalClockSubDisplay = React.createClass({
             props = s.props;
 
         let fontSize = props.fontSize,
-            width = props.width,
-            lineHeight = fontSize * 1.2;
+            width = props.width;
 
         let displayStyle = {
-            fontSize: `${ fontSize }px`,
-            lineHeight: `${ lineHeight }px`
+            fontSize: `${ fontSize }px`
         },
             labelStyle = {
             width: `${ width }px`
@@ -767,7 +766,7 @@ let ApDigitalClockSubDisplay = React.createClass({
 
 module.exports = ApDigitalClockSubDisplay;
 
-},{"react":181,"react-dom":50}],10:[function(require,module,exports){
+},{"classnames":15,"react":181,"react-dom":50}],10:[function(require,module,exports){
 /**
  * Chop to ceil.
  * @function ceil

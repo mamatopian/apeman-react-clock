@@ -57,24 +57,26 @@ let ApDigitalClock = React.createClass({
                     background: `${backgroundColor}`
                 },
                 '.ap-digital-clock-board-inner': {
-                    position: `absolute`,
-                    left: 0,
-                    right: 0,
-                    top: `30%`,
-                    bottom: `30%`
+                    display: `inline-block`,
+                    verticalAlign: `middle`
                 },
                 '.ap-digital-clock-dummy-text': {
                     opacity: 0,
                     width: 1,
-                    display: `inline-block`
+                    display: `inline-block`,
+                    verticalAlign: `middle`,
+                    marginRight: `-1px`,
+                    whiteSpace:`pre`,
+                    overflow: `hidden`
                 },
                 '.ap-digital-clock-main-display': {},
                 '.ap-digital-clock-sub-display': {
-                    textAlign: 'right'
+                    overflow: `hidden`,
+                    textAlign: `right`
                 },
                 '.ap-digital-clock-sub-label': {
-                    display:`block`,
-                    margin:`0 auto`
+                    display: `block`,
+                    margin: `2px auto`
                 }
             },
             smallMediaData = {},

@@ -7,7 +7,8 @@
 
 const React = require('react'),
     types = React.PropTypes,
-    ReactDOM = require('react-dom');
+    ReactDOM = require('react-dom'),
+    classnames = require('classnames');
 
 
 /** @lends ApDigitalClockSubDisplay */
@@ -28,12 +29,10 @@ let ApDigitalClockSubDisplay = React.createClass({
             props = s.props;
 
         let fontSize = props.fontSize,
-            width = props.width,
-            lineHeight = fontSize * 1.2;
+            width = props.width;
 
         let displayStyle = {
-            fontSize: `${fontSize}px`,
-            lineHeight: `${lineHeight}px`
+            fontSize: `${fontSize}px`
         }, labelStyle = {
             width: `${width}px`
         };
