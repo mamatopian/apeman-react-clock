@@ -89,16 +89,26 @@ let ApAnalogClock = React.createClass({
             height: size
         };
 
+        let screwSize = 9;
+
         return (
             <ApClock className={classnames("ap-analog-clock", props.className)}>
                 <div className="ap-analog-clock-board" style={boardStyle}>
                     <div className="ap-analog-clock-board-inner">
-                        <ApAnalogClockHand width={4} heightRate={0.8} angle={state.hour}></ApAnalogClockHand>
-                        <ApAnalogClockHand width={4} heightRate={1} angle={state.minute}></ApAnalogClockHand>
-                        <ApAnalogClockHand width={2} heightRate={1} angle={state.second}></ApAnalogClockHand>
+                        <ApAnalogClockHand className="ap-analog-clock-hand-hour" width={4} heightRate={0.8}
+                                           angle={state.hour}></ApAnalogClockHand>
+                        <ApAnalogClockHand className="ap-analog-clock-hand-minute" width={4} heightRate={0.95}
+                                           angle={state.minute}></ApAnalogClockHand>
+                        <ApAnalogClockHand className="ap-analog-clock-hand-second" width={2} heightRate={1}
+                                           angle={state.second}></ApAnalogClockHand>
                     </div>
                     <div>
                         {letters}
+                    </div>
+                    <div className="ap-analog-clock-screw-container">
+                        <div className="ap-analog-clock-screw"
+                             style={{width:screwSize, height:screwSize, bottom:-screwSize/2}}
+                             ref="screw"></div>
                     </div>
                 </div>
             </ApClock>

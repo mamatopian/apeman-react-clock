@@ -32,7 +32,6 @@ let ApAnalogClockHand = React.createClass({
             heightRate = props.heightRate,
             width = props.width;
 
-
         return (
             <div className={classnames("ap-analog-clock-hand", className)}
                  style={{transform: `rotate(${angle}deg)`}}>

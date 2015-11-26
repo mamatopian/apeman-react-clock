@@ -18,6 +18,7 @@ let ApAnalogClockStyle = React.createClass({
         width: types.number,
         height: types.number,
         color: types.string,
+        accentColor: types.string,
         backgroundColor: types.string
     },
     getDefaultProps: function () {
@@ -27,6 +28,7 @@ let ApAnalogClockStyle = React.createClass({
             width: 320,
             height: 240,
             color: '#333',
+            accentColor: '#F33',
             backgroundColor: '#FFF'
         }
     },
@@ -37,6 +39,7 @@ let ApAnalogClockStyle = React.createClass({
         let width = props.width,
             height = props.height,
             color = props.color,
+            accentColor = props.accentColor,
             backgroundColor = props.backgroundColor;
 
         let boardPadding = 18;
@@ -102,8 +105,27 @@ let ApAnalogClockStyle = React.createClass({
                 '.ap-analog-clock-hand-bar': {
                     background: `${color}`,
                     width: 24,
-                    height: '100%',
+                    height: `100%`,
+                    borderRadius:`1px`,
                     display: `inline-block`
+                },
+                '.ap-analog-clock-hand-second .ap-analog-clock-hand-bar': {
+                    background: `${accentColor}`
+                },
+                '.ap-analog-clock-screw-container': {
+                    display: `block`,
+                    position: `absolute`,
+                    left: `40%`,
+                    right: `40%`,
+                    width: `20%`,
+                    bottom: `50%`,
+                    textAlign: `center`
+                },
+                '.ap-analog-clock-screw': {
+                    position: `relative`,
+                    display: `inline-block`,
+                    borderRadius: `50%`,
+                    background: `${accentColor}`
                 }
             },
             smallMediaData = {},

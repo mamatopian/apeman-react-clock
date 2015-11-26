@@ -130,6 +130,8 @@ let ApAnalogClock = React.createClass({
             height: size
         };
 
+        let screwSize = 9;
+
         return React.createElement(
             ApClock,
             { className: classnames("ap-analog-clock", props.className) },
@@ -139,14 +141,24 @@ let ApAnalogClock = React.createClass({
                 React.createElement(
                     'div',
                     { className: 'ap-analog-clock-board-inner' },
-                    React.createElement(ApAnalogClockHand, { width: 4, heightRate: 0.8, angle: state.hour }),
-                    React.createElement(ApAnalogClockHand, { width: 4, heightRate: 1, angle: state.minute }),
-                    React.createElement(ApAnalogClockHand, { width: 2, heightRate: 1, angle: state.second })
+                    React.createElement(ApAnalogClockHand, { className: 'ap-analog-clock-hand-hour', width: 4, heightRate: 0.8,
+                        angle: state.hour }),
+                    React.createElement(ApAnalogClockHand, { className: 'ap-analog-clock-hand-minute', width: 4, heightRate: 0.95,
+                        angle: state.minute }),
+                    React.createElement(ApAnalogClockHand, { className: 'ap-analog-clock-hand-second', width: 2, heightRate: 1,
+                        angle: state.second })
                 ),
                 React.createElement(
                     'div',
                     null,
                     letters
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'ap-analog-clock-screw-container' },
+                    React.createElement('div', { className: 'ap-analog-clock-screw',
+                        style: { width: screwSize, height: screwSize, bottom: -screwSize / 2 },
+                        ref: 'screw' })
                 )
             )
         );
