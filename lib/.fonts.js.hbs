@@ -1,0 +1,7 @@
+"use strict";
+
+const fontsDir = __dirname + '/../asset/fonts';
+
+{{#each fonts}}
+exports.{{camelcase name}} = path.join(fontsDir, '{{filename}}');
+{{/each}}

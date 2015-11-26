@@ -82,9 +82,16 @@ let ApAnalogClock = React.createClass({
             );
         });
 
+        let size = state.size;
+
+        let boardStyle = {
+            width: size,
+            height: size
+        };
+
         return (
             <ApClock className={classnames("ap-analog-clock", props.className)}>
-                <div className="ap-analog-clock-board" style={{width:state.size, height:state.size}}>
+                <div className="ap-analog-clock-board" style={boardStyle}>
                     <div className="ap-analog-clock-board-inner">
                         <ApAnalogClockHand width={4} heightRate={0.8} angle={state.hour}></ApAnalogClockHand>
                         <ApAnalogClockHand width={4} heightRate={1} angle={state.minute}></ApAnalogClockHand>

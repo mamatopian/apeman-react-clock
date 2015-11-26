@@ -8,9 +8,13 @@ const ApAnalogClock = require('../../lib/ap_analog_clock'),
 let Demo = React.createClass({
     render: function () {
         return (
-            <div>
-                <ApAnalogClock></ApAnalogClock>
-                <ApDigitalLock></ApDigitalLock>
+            <div style={{display:'flex'}}>
+                <div style={{width:'100%'}}>
+                    <ApAnalogClock></ApAnalogClock>
+                </div>
+                <div style={{width:'100%'}}>
+                    <ApDigitalLock></ApDigitalLock>
+                </div>
             </div>
         );
     }

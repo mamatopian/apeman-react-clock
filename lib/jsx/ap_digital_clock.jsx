@@ -9,7 +9,6 @@ const React = require('react'),
     ReactDOM = require('react-dom'),
     classnames = require('classnames'),
     ApClock = require('./ap_clock'),
-    ApDigitalClockNumber = require('./ap_digital_clock_number'),
     PureRenderMixin = require('react-addons-pure-render-mixin'),
     chopcal = require('chopcal'),
     numcal = require('numcal');
@@ -28,13 +27,21 @@ let ApDigitalLock = React.createClass({
         PureRenderMixin
     ],
 
-    statics: {},
+    statics: {
+        padZero: function (value, len) {
+            let result = String(value);
+            while (result.length < len) {
+                result = "0" + result;
+            }
+            return result;
+        }
+    },
 
     getInitialState: function () {
         return {
-            hour: 0,
-            minute: 0,
-            second: 0,
+            hours: "00",
+            minutes: "00",
+            seconds: "00",
             size: 256
         }
     },
@@ -48,14 +55,33 @@ let ApDigitalLock = React.createClass({
             state = s.state,
             props = s.props;
 
+        let size = state.size;
+
+        console.log('size', size);
+
+        let boardStyle = {
+                width: size,
+                height: size
+            },
+            mainStyle = {
+                lineHeight: `${size * 0.4}px`,
+                fontSize: `${size * 0.3}px`
+            },
+            subStyle = {};
+
+
         return (
             <ApClock className={classnames("ap-digital-clock", props.className)}>
-                <div className="ap-digital-clock-board">
+                <div className="ap-digital-clock-board" style={boardStyle}>
                     <div className="ap-digital-clock-board-inner">
-                        <ApDigitalClockNumber></ApDigitalClockNumber>
-                        <ApDigitalClockNumber></ApDigitalClockNumber>
-                        <ApDigitalClockNumber></ApDigitalClockNumber>
-                        <ApDigitalClockNumber></ApDigitalClockNumber>
+                        <span className="ap-digital-clock-main" style={mainStyle}>
+                            <span>{state.hours}</span>
+                            <span>:</span>
+                            <span>{state.minutes}</span>
+                        </span>
+                        <span className="ap-digital-clock-sub" style={subStyle}>
+                            <span>{state.seconds}</span>
+                        </span>
                     </div>
                 </div>
             </ApClock>
@@ -75,12 +101,18 @@ let ApDigitalLock = React.createClass({
         let s = this,
             props = s.props;
 
+        let padZero = ApDigitalLock.padZero;
+
         function _loop() {
             if (!s._looping) {
                 return;
             }
             let now = new Date();
+
             s.setState({
+                hours: padZero(now.getHours(), 2),
+                minutes: padZero(now.getMinutes(), 2),
+                seconds: padZero(now.getSeconds(), 2)
             });
             window.requestAnimationFrame(_loop);
         }

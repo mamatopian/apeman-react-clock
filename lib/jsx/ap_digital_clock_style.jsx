@@ -15,50 +15,52 @@ let ApDigitalClock = React.createClass({
     propTypes: {
         scoped: types.bool,
         style: types.object,
-        highlightColor: types.string,
-        numberColor: types.string,
-        numberWidth: types.number,
-        numberHeight: types.number
+        minSize: types.number,
+        maxSize: types.number,
+        color: types.string
+
     },
     getDefaultProps: function () {
         return {
             scoped: false,
             style: {},
-            highlightColor: '#38E',
-            numberColor: '#AAA',
-            numberWidth: 8,
-            numberHeight: 24
+            minSize: 80,
+            maxSize: 480,
+            color: '#555'
         }
     },
     render: function () {
         let s = this,
             props = s.props;
 
-        let highlightColor = props.highlightColor,
-            numberColor = props.numberColor,
-            numberWidth = props.numberWidth,
-            numberHeight = props.numberHeight;
-
-        let barWidth = numberWidth / 10,
-            barHeight = numberHeight * 0.45;
+        let minSize = props.minSize,
+            maxSize = props.maxSize,
+            color = props.color,
+            backgroundColor = props.backgroundColor;
 
         let data = {
-                '.ap-digital-clock-number': {
-                    width: `${numberWidth}px`,
-                    height: `${numberHeight}px`
+                '.ap-digital-clock': {
+                    color: color,
+                    minWidth: minSize,
+                    minHeight: minSize,
+                    maxWidth: maxSize,
+                    maxHeight: maxSize,
+                    display: `block`,
+                    margin: `0 auto`,
+                    textAlign: 'center'
                 },
-                '.ap-digital-clock-number-bar': {
+                '.ap-digital-clock-board': {
+                    backgroundColor: backgroundColor,
                     display: `inline-block`,
-                    width: `${barWidth}px`,
-                    height: `${barHeight}px`,
-                    backgroundColor: `${numberColor}`,
-                    position: 'absolute'
+                    border: `1px solid ${color}`,
+                    position: `relative`
                 },
-                '.ap-digital-clock-number-bar-highlighted': {
-                    backgroundColor: `${highlightColor}`
-                },
-                '.ap-digital-clock-number-bar-0': {
-
+                '.ap-digital-clock-board-inner': {
+                    position: `absolute`,
+                    left: 0,
+                    right: 0,
+                    top: `30%`,
+                    bottom: `30%`
                 }
             },
             smallMediaData = {},
