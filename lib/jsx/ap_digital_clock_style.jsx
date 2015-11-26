@@ -15,8 +15,8 @@ let ApDigitalClock = React.createClass({
     propTypes: {
         scoped: types.bool,
         style: types.object,
-        minSize: types.number,
-        maxSize: types.number,
+        width: types.number,
+        height: types.number,
         color: types.string,
         backgroundColor: types.string
 
@@ -25,9 +25,9 @@ let ApDigitalClock = React.createClass({
         return {
             scoped: false,
             style: {},
-            minSize: 80,
-            maxSize: 480,
-            color: '#555',
+            width: 340,
+            height: 240,
+            color: '#333',
             backgroundColor: '#FFF'
         }
     },
@@ -35,18 +35,16 @@ let ApDigitalClock = React.createClass({
         let s = this,
             props = s.props;
 
-        let minSize = props.minSize,
-            maxSize = props.maxSize,
+        let width = props.width,
+            height = props.height,
             color = props.color,
             backgroundColor = props.backgroundColor;
 
         let data = {
                 '.ap-digital-clock': {
                     color: color,
-                    minWidth: minSize,
-                    minHeight: minSize,
-                    maxWidth: maxSize,
-                    maxHeight: maxSize,
+                    width: width,
+                    height: height,
                     display: `block`,
                     margin: `0 auto`,
                     textAlign: 'center'
@@ -65,10 +63,19 @@ let ApDigitalClock = React.createClass({
                     top: `30%`,
                     bottom: `30%`
                 },
-                '.ap-digital-clock-main': {
+                '.ap-digital-clock-display': {
+                    display: `flex`
+                },
+                '.ap-digital-clock-display-main': {
+                    display: `inline-block`,
+                    width: `100%`
+                },
+                '.ap-digital-clock-display-sub': {
                     display: `inline-block`
                 },
-                '.ap-digital-clock-sub': {
+                '.ap-digital-clock-display-dummy-text': {
+                    opacity: 0,
+                    width: 1,
                     display: `inline-block`
                 }
             },

@@ -88,15 +88,15 @@ Usage
 const React = require('react'),
     apemanReactClock = require('apeman-react-clock');
 
-const ApClock = apemanReactClock.ApClock,
-    ApClockStyle = apemanReactClock.ApClockStyle;
+const ApAnalogClock = apemanReactClock.ApAnalogClock,
+    ApAnalogClockStyle = apemanReactClock.ApAnalogClockStyle;
 
 let ExampleComponent = React.createClass({
     render: function () {
         return (
             <div>
-                <ApClockStyle scoped></ApClockStyle>
-                <ApClock></ApClock>
+                <ApAnalogClockStyle scoped></ApAnalogClockStyle>
+                <ApAnalogClock></ApAnalogClock>
             </div>
         )
     }
@@ -144,6 +144,42 @@ Analog clock.
 | ---- | ---- | ------- | ----------- |
 | boardLetters | Array | [12,0,1...11] | Letters to display at clock. |
 
+
+### ApAnalogClockStyle
+
+Style for ApAnalogClock
+
+**Props**
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| scoped | bool | false | Render as scoped style. |
+| style | object | {} | Style object. |
+| width | string | 320 | Width of clock |
+| width | string | 240 | height of clock |
+
+
+### ApDigitalClock
+
+Digital clock.
+
+**Props**
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+
+
+### ApDigitalClockStyle
+
+Style for ApDigitalClock
+
+**Props**
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| scoped | bool | false | Render as scoped style. |
+| style | object | {} | Style object. |
+| width | string | 320 | Width of clock |
+| width | string | 240 | height of clock |
 
 
 

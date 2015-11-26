@@ -3,15 +3,15 @@
 const React = require('react'),
     apemanReactClock = require('apeman-react-clock');
 
-const ApClock = apemanReactClock.ApClock,
-    ApClockStyle = apemanReactClock.ApClockStyle;
+const ApAnalogClock = apemanReactClock.ApAnalogClock,
+    ApAnalogClockStyle = apemanReactClock.ApAnalogClockStyle;
 
 let ExampleComponent = React.createClass({
     render: function () {
         return (
             <div>
-                <ApClockStyle scoped></ApClockStyle>
-                <ApClock></ApClock>
+                <ApAnalogClockStyle scoped></ApAnalogClockStyle>
+                <ApAnalogClock></ApAnalogClock>
             </div>
         )
     }

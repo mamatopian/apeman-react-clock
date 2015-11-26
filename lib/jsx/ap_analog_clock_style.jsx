@@ -15,8 +15,8 @@ let ApAnalogClockStyle = React.createClass({
     propTypes: {
         scoped: types.bool,
         style: types.object,
-        minSize: types.number,
-        maxSize: types.number,
+        width: types.number,
+        height: types.number,
         color: types.string,
         backgroundColor: types.string
     },
@@ -24,9 +24,9 @@ let ApAnalogClockStyle = React.createClass({
         return {
             scoped: false,
             style: {},
-            minSize: 80,
-            maxSize: 480,
-            color: '#555',
+            width: 320,
+            height: 240,
+            color: '#333',
             backgroundColor: '#FFF'
         }
     },
@@ -34,8 +34,8 @@ let ApAnalogClockStyle = React.createClass({
         let s = this,
             props = s.props;
 
-        let minSize = props.minSize,
-            maxSize = props.maxSize,
+        let width = props.width,
+            height = props.height,
             color = props.color,
             backgroundColor = props.backgroundColor;
 
@@ -43,10 +43,8 @@ let ApAnalogClockStyle = React.createClass({
 
         let data = {
                 '.ap-analog-clock': {
-                    minWidth: minSize,
-                    minHeight: minSize,
-                    maxWidth: maxSize,
-                    maxHeight: maxSize,
+                    width: width,
+                    height: height,
                     display: `block`,
                     margin: `0 auto`,
                     textAlign: 'center',
@@ -80,7 +78,7 @@ let ApAnalogClockStyle = React.createClass({
                 '.ap-analog-letter-title': {
                     position: `absolute`,
                     left: `0`,
-                    top: `0`,
+                    top: `4px`,
                     display: `inline-block`
                 },
                 '.ap-analog-clock-hand': {

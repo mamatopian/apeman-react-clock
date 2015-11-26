@@ -33,7 +33,7 @@ module.exports = (
 `
 @font-face {
     font-family: digital-clock;
-    src: url(digital-clock.ttf);
+    src: url(./digital-clock.ttf);
 }
 .ap-digital-clock {
     font-family: digital-clock;

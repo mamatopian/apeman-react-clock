@@ -6,6 +6,7 @@
 "use strict";
 
 const React = require('react'),
+    types = React.PropTypes,
     ReactDOM = require('react-dom'),
     classnames = require('classnames'),
     ApClock = require('./ap_clock'),
@@ -21,7 +22,9 @@ let ApDigitalLock = React.createClass({
     // Specs
     //--------------------
 
-    propTypes: {},
+    propTypes: {
+        showSeconds: types.bool
+    },
 
     mixins: [
         PureRenderMixin
@@ -47,7 +50,9 @@ let ApDigitalLock = React.createClass({
     },
 
     getDefaultProps: function () {
-        return {}
+        return {
+            showSeconds: true
+        }
     },
 
     render: function () {
@@ -57,33 +62,40 @@ let ApDigitalLock = React.createClass({
 
         let size = state.size;
 
-        console.log('size', size);
+        let mainFontSize = parseInt(size * 0.2),
+            mainLineHeight = size * 0.4,
+            smallFontSize = parseInt(size * 0.12);
 
         let boardStyle = {
-                width: size,
-                height: size
+                width: `${size}px`,
+                height: `${size}px`
             },
             mainStyle = {
-                lineHeight: `${size * 0.4}px`,
-                fontSize: `${parseInt(size * 0.28)}px`
+                lineHeight: `${mainLineHeight}px`,
+                fontSize: `${mainFontSize}px`
             },
             subStyle = {
-                fontSize: `${parseInt(size * 0.16)}px`,
-                margin: `0 4px`
+                lineHeight: `${mainLineHeight}px`,
+                fontSize: `${smallFontSize}px`,
+                width: `${size * 0.22}px`
             };
 
         return (
             <ApClock className={classnames("ap-digital-clock", props.className)}>
                 <div className="ap-digital-clock-board" style={boardStyle}>
                     <div className="ap-digital-clock-board-inner">
-                        <span className="ap-digital-clock-main" style={mainStyle}>
-                            <span>{state.hours}</span>
-                            <span>:</span>
-                            <span>{state.minutes}</span>
-                        </span>
-                        <span className="ap-digital-clock-sub" style={subStyle}>
-                            <span>{state.seconds}</span>
-                        </span>
+                        <div className="ap-digital-clock-display">
+                            <span className="ap-digital-clock-display-main" style={mainStyle}>
+                                <span>{state.hours}</span>
+                                <span>:</span>
+                                <span>{state.minutes}</span>
+                                <span className="ap-digital-clock-display-sub" style={subStyle}>
+                                    <span className="ap-digital-clock-display-dummy-text"
+                                          style={{fontSize: mainFontSize}}>&nbsp;</span>
+                                    <span>{state.seconds}</span>
+                                </span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </ApClock>
