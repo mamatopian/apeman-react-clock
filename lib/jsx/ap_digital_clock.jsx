@@ -10,6 +10,9 @@ const React = require('react'),
     ReactDOM = require('react-dom'),
     classnames = require('classnames'),
     ApClock = require('./ap_clock'),
+    ApDigitalClockMainDisplay = require('./ap_digital_clock_main_display'),
+    ApDigitalClockSubDisplay = require('./ap_digital_clock_sub_display'),
+    moment = require('moment'),
     PureRenderMixin = require('react-addons-pure-render-mixin'),
     chopcal = require('chopcal'),
     numcal = require('numcal');
@@ -45,7 +48,8 @@ let ApDigitalLock = React.createClass({
             hours: "00",
             minutes: "00",
             seconds: "00",
-            size: 256
+            size: 256,
+            labelWidth: 128
         }
     },
 
@@ -63,38 +67,28 @@ let ApDigitalLock = React.createClass({
         let size = state.size;
 
         let mainFontSize = parseInt(size * 0.2),
-            mainLineHeight = size * 0.4,
-            smallFontSize = parseInt(size * 0.12);
+            subFontSize = mainFontSize / 4;
 
         let boardStyle = {
-                width: `${size}px`,
-                height: `${size}px`
-            },
-            mainStyle = {
-                lineHeight: `${mainLineHeight}px`,
-                fontSize: `${mainFontSize}px`
-            },
-            subStyle = {
-                lineHeight: `${mainLineHeight}px`,
-                fontSize: `${smallFontSize}px`,
-                width: `${size * 0.22}px`
-            };
+            width: `${size}px`,
+            height: `${size}px`
+        };
 
         return (
             <ApClock className={classnames("ap-digital-clock", props.className)}>
                 <div className="ap-digital-clock-board" style={boardStyle}>
                     <div className="ap-digital-clock-board-inner">
                         <div className="ap-digital-clock-display">
-                            <span className="ap-digital-clock-display-main" style={mainStyle}>
-                                <span>{state.hours}</span>
-                                <span>:</span>
-                                <span>{state.minutes}</span>
-                                <span className="ap-digital-clock-display-sub" style={subStyle}>
-                                    <span className="ap-digital-clock-display-dummy-text"
-                                          style={{fontSize: mainFontSize}}>&nbsp;</span>
-                                    <span>{state.seconds}</span>
-                                </span>
-                            </span>
+                            <ApDigitalClockMainDisplay hours={state.hours}
+                                                       minutes={state.minutes}
+                                                       seconds={state.seconds}
+                                                       fontSize={mainFontSize}
+                                                       onSizeChange={s.onMainDisplaySizeChange}
+                            />
+                            <ApDigitalClockSubDisplay day={state.day}
+                                                      width={state.labelWidth}
+                                                      fontSize={subFontSize}
+                            />
                         </div>
                     </div>
                 </div>
@@ -126,7 +120,8 @@ let ApDigitalLock = React.createClass({
             s.setState({
                 hours: padZero(now.getHours(), 2),
                 minutes: padZero(now.getMinutes(), 2),
-                seconds: padZero(now.getSeconds(), 2)
+                seconds: padZero(now.getSeconds(), 2),
+                day: moment(now).format('LL')
             });
             window.requestAnimationFrame(_loop);
         }
@@ -152,6 +147,13 @@ let ApDigitalLock = React.createClass({
         let size = numcal.min(elm.offsetWidth, elm.offsetHeight);
         s.setState({
             size: size
+        });
+    },
+
+    onMainDisplaySizeChange: function (sizes) {
+        let s = this;
+        s.setState({
+            labelWidth: sizes.innerWidth
         });
     }
 

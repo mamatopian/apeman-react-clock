@@ -63,20 +63,18 @@ let ApDigitalClock = React.createClass({
                     top: `30%`,
                     bottom: `30%`
                 },
-                '.ap-digital-clock-display': {
-                    display: `flex`
-                },
-                '.ap-digital-clock-display-main': {
-                    display: `inline-block`,
-                    width: `100%`
-                },
-                '.ap-digital-clock-display-sub': {
-                    display: `inline-block`
-                },
-                '.ap-digital-clock-display-dummy-text': {
+                '.ap-digital-clock-dummy-text': {
                     opacity: 0,
                     width: 1,
                     display: `inline-block`
+                },
+                '.ap-digital-clock-main-display': {},
+                '.ap-digital-clock-sub-display': {
+                    textAlign: 'right'
+                },
+                '.ap-digital-clock-sub-label': {
+                    display:`block`,
+                    margin:`0 auto`
                 }
             },
             smallMediaData = {},
