@@ -79,7 +79,7 @@ let ApDigitalLock = React.createClass({
                 <div className="ap-digital-clock-board" style={boardStyle}>
                     <div className="ap-digital-clock-dummy-text"
                          style={{lineHeight:`${size}px`}}
-                    >f
+                    >&nbsp;
                     </div>
                     <div className="ap-digital-clock-board-inner">
                         <ApDigitalClockMainDisplay hours={state.hours}

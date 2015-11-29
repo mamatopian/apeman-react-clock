@@ -510,7 +510,7 @@ let ApDigitalLock = React.createClass({
                     { className: 'ap-digital-clock-dummy-text',
                         style: { lineHeight: `${ size }px` }
                     },
-                    'f'
+                    ' '
                 ),
                 React.createElement(
                     'div',
