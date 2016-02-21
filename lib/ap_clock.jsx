@@ -5,9 +5,8 @@
 
 "use strict";
 
-const React = require('react'),
-    classnames = require('classnames'),
-    types = React.PropTypes;
+import React, {PropTypes as types} from 'react';
+import classnames from 'classnames';
 
 /** @lends ApClock */
 let ApClock = React.createClass({

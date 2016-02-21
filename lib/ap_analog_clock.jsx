@@ -5,16 +5,15 @@
 
 "use strict";
 
-const React = require('react'),
-    ReactDOM = require('react-dom'),
-    classnames = require('classnames'),
-    ApClock = require('./ap_clock'),
-    PureRenderMixin = require('react-addons-pure-render-mixin'),
-    chopcal = require('chopcal'),
-    numcal = require('numcal'),
-    types = React.PropTypes,
-    ApAnalogClockHand = require('./ap_analog_clock_hand'),
-    ApAnalogClockLetter = require('./ap_analog_clock_letter');
+import React, {PropTypes as types} from 'react';
+import classnames from 'classnames';
+import ReactDOM from 'react-dom';
+import ApClock from './ap_clock';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import chopcal from 'chopcal';
+import numcal from 'numcal';
+import ApAnalogClockHand from './ap_analog_clock_hand';
+import ApAnalogClockLetter from './ap_analog_clock_letter';
 
 /** @lends ApAnalogClock */
 let ApAnalogClock = React.createClass({

@@ -5,10 +5,8 @@
 
 "use strict";
 
-const React = require('react'),
-    types = React.PropTypes,
-    ReactDOM = require('react-dom'),
-    classnames = require('classnames');
+import React, {PropTypes as types} from 'react';
+import classnames from 'classnames';
 
 
 /** @lends ApDigitalClockSubDisplay */

@@ -5,17 +5,16 @@
 
 "use strict";
 
-const React = require('react'),
-    types = React.PropTypes,
-    ReactDOM = require('react-dom'),
-    classnames = require('classnames'),
-    ApClock = require('./ap_clock'),
-    ApDigitalClockMainDisplay = require('./ap_digital_clock_main_display'),
-    ApDigitalClockSubDisplay = require('./ap_digital_clock_sub_display'),
-    moment = require('moment'),
-    PureRenderMixin = require('react-addons-pure-render-mixin'),
-    chopcal = require('chopcal'),
-    numcal = require('numcal');
+import React, {PropTypes as types} from 'react';
+import classnames from 'classnames';
+
+import ReactDOM from 'react-dom';
+import ApClock from './ap_clock';
+import ApDigitalClockMainDisplay from './ap_digital_clock_main_display';
+import ApDigitalClockSubDisplay from './ap_digital_clock_sub_display';
+import moment from 'moment';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import numcal from 'numcal';
 
 
 /** @lends ApDigitalLock */

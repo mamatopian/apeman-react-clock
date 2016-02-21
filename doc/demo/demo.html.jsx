@@ -1,22 +1,18 @@
 "use strict";
 
-const React = require('react'),
-    pkg = require('../../package.json'),
-    links = require('../links.json'),
-    fs = require('fs'),
-    apeHighlighting = require('ape-highlighting'),
-    highlightJsx = apeHighlighting.highlightJsx,
-    stylesheets = require('apeman-asset-stylesheets');
+import React from 'react';
+import pkg from '../../package.json';
+import links from '../links.json';
+import fs from 'fs';
+import {highlightJsx} from 'ape-highlighting';
+import stylesheets from 'apeman-asset-stylesheets';
 
-const Demo = require('./demo.component.js'),
-    ApClockStyle = require('../../lib/ap_clock_style'),
-    ApAnalogClockStyle = require('../../lib/ap_analog_clock_style'),
-    ApDigitalClockStyle = require('../../lib/ap_digital_clock_style'),
-    basic = require('apeman-react-basic'),
-    ApStyle = basic.ApStyle,
-    ApHead = basic.ApHead,
-    ApLinks = basic.ApLinks,
-    ApHtml = basic.ApHtml;
+import Demo from './demo.component.js';
+import ApClockStyle from '../../lib/ap_clock_style';
+import ApAnalogClockStyle from '../../lib/ap_analog_clock_style';
+import ApDigitalClockStyle from '../../lib/ap_digital_clock_style';
+
+import {ApStyle, ApIonIconStyle, ApFaIconStyle, ApHead, ApBody, ApLinks, ApHtml} from 'apeman-react-basic';
 
 const FAVICON_URL = "https://raw.githubusercontent.com/apeman-asset-labo/apeman-asset-images/master/dist/favicon/react-favicon.png";
 
@@ -26,9 +22,9 @@ module.exports = (
                 title={pkg.name + ' Demo'}
                 icon={FAVICON_URL}>
             <ApStyle data={fs.readFileSync(stylesheets.reactDemo).toString()}></ApStyle>
-            <ApClockStyle></ApClockStyle>
-            <ApAnalogClockStyle></ApAnalogClockStyle>
-            <ApDigitalClockStyle></ApDigitalClockStyle>
+            <ApClockStyle/>
+            <ApAnalogClockStyle/>
+            <ApDigitalClockStyle/>
             <ApStyle data={
 `
 @font-face {
@@ -77,7 +73,7 @@ module.exports = (
                 <ApLinks links={links}></ApLinks>
             </div>
         </footer>
-        <script src="./demo.js"></script>
+        <script src="./demo.js"/>
         </body>
     </ApHtml>
 );

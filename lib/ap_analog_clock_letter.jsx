@@ -6,8 +6,8 @@
 
 "use strict";
 
-const React = require('react'),
-    types = React.PropTypes;
+import React, {PropTypes as types} from 'react';
+import classnames from 'classnames';
 
 /** @lends ApAnalogClockLetter */
 let ApAnalogClockLetter = React.createClass({

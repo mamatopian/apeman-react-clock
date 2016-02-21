@@ -5,10 +5,9 @@
 
 "use strict";
 
-const React = require('react'),
-    types = React.PropTypes,
-    extend = require('extend'),
-    ApStyle = require('apeman-react-style')['ApStyle'];
+import React, {PropTypes as types} from 'react';
+import classnames from 'classnames';
+import {ApStyle} from 'apeman-react-style';
 
 /** @lends ApAnalogClockStyle */
 let ApAnalogClockStyle = React.createClass({
@@ -106,7 +105,7 @@ let ApAnalogClockStyle = React.createClass({
                     background: `${color}`,
                     width: 24,
                     height: `100%`,
-                    borderRadius:`1px`,
+                    borderRadius: `1px`,
                     display: `inline-block`
                 },
                 '.ap-analog-clock-hand-second .ap-analog-clock-hand-bar': {
@@ -133,7 +132,7 @@ let ApAnalogClockStyle = React.createClass({
             largeMediaData = {};
         return (
             <ApStyle scoped={props.scoped}
-                     data={extend(data, props.style)}
+                     data={Object.assign(data, props.style)}
                      smallMediaData={smallMediaData}
                      mediumMediaData={mediumMediaData}
                      largeMediaData={largeMediaData}

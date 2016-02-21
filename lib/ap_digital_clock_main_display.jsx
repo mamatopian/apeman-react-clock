@@ -5,10 +5,9 @@
 
 "use strict";
 
-const React = require('react'),
-    types = React.PropTypes,
-    ReactDOM = require('react-dom');
-
+import React, {PropTypes as types} from 'react';
+import ReactDOM from 'react-dom';
+import classnames from 'classnames';
 
 /** @lends ApDigitalClockMainDisplay */
 let ApDigitalClockMainDisplay = React.createClass({
