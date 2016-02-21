@@ -16,13 +16,13 @@ let ApClockStyle = React.createClass({
         scoped: types.bool,
         style: types.object
     },
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             scoped: false,
             style: {}
         }
     },
-    render: function () {
+    render() {
         let s = this,
             props = s.props;
         let data = {},

@@ -15,13 +15,13 @@ let ApAnalogClockLetter = React.createClass({
         angle: types.number,
         letter: types.string
     },
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             angle: 0,
             letter: ''
         }
     },
-    render: function () {
+    render() {
         let s = this,
             props = s.props;
 

@@ -34,7 +34,7 @@ let ApDigitalLock = React.createClass({
     ],
 
     statics: {
-        padZero: function (value, len) {
+        padZero(value, len) {
             let result = String(value);
             while (result.length < len) {
                 result = "0" + result;
@@ -43,7 +43,7 @@ let ApDigitalLock = React.createClass({
         }
     },
 
-    getInitialState: function () {
+    getInitialState() {
         return {
             hours: "00",
             minutes: "00",
@@ -53,13 +53,13 @@ let ApDigitalLock = React.createClass({
         }
     },
 
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             showSeconds: true
         }
     },
 
-    render: function () {
+    render() {
         let s = this,
             state = s.state,
             props = s.props;
@@ -102,12 +102,12 @@ let ApDigitalLock = React.createClass({
     // Lifecycle
     //--------------------
 
-    componentWillMount: function () {
+    componentWillMount() {
         let s = this;
         s._looping = true;
     },
 
-    componentDidMount: function () {
+    componentDidMount() {
         let s = this,
             props = s.props;
 
@@ -133,7 +133,7 @@ let ApDigitalLock = React.createClass({
         s.resizeClock();
     },
 
-    componentWillUnmount: function () {
+    componentWillUnmount() {
         let s = this;
         window.removeEventListener('resize', s.resizeClock);
         s._looping = false;
@@ -143,7 +143,7 @@ let ApDigitalLock = React.createClass({
     // Helper
     //------------------
 
-    resizeClock: function () {
+    resizeClock() {
         let s = this,
             elm = ReactDOM.findDOMNode(s);
         let size = numcal.min(elm.offsetWidth, elm.offsetHeight);
@@ -152,7 +152,7 @@ let ApDigitalLock = React.createClass({
         });
     },
 
-    onMainDisplaySizeChange: function (sizes) {
+    onMainDisplaySizeChange(sizes) {
         let s = this;
         s.setState({
             labelWidth: sizes.innerWidth

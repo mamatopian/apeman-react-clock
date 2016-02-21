@@ -21,7 +21,7 @@ let ApAnalogClockStyle = React.createClass({
         accentColor: types.string,
         backgroundColor: types.string
     },
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             scoped: false,
             style: {},
@@ -32,7 +32,7 @@ let ApAnalogClockStyle = React.createClass({
             backgroundColor: '#FFF'
         }
     },
-    render: function () {
+    render() {
         let s = this,
             props = s.props;
 

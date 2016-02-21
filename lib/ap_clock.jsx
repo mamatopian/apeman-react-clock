@@ -24,15 +24,15 @@ let ApClock = React.createClass({
     statics: {
     },
 
-    getInitialState: function () {
+    getInitialState() {
         return {};
     },
 
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {};
     },
 
-    render: function () {
+    render() {
         let s = this,
             props = s.props;
 
@@ -48,32 +48,32 @@ let ApClock = React.createClass({
     // Lifecycle
     //--------------------
 
-    componentWillMount: function () {
+    componentWillMount() {
         let s = this;
     },
 
-    componentDidMount: function () {
+    componentDidMount() {
         let s = this;
     },
 
-    componentWillReceiveProps: function (nextProps) {
+    componentWillReceiveProps(nextProps) {
         let s = this;
     },
 
-    shouldComponentUpdate: function (nextProps, nextState) {
+    shouldComponentUpdate(nextProps, nextState) {
         let s = this;
         return true;
     },
 
-    componentWillUpdate: function (nextProps, nextState) {
+    componentWillUpdate(nextProps, nextState) {
         let s = this;
     },
 
-    componentDidUpdate: function (prevProps, prevState) {
+    componentDidUpdate(prevProps, prevState) {
         let s = this;
     },
 
-    componentWillUnmount: function () {
+    componentWillUnmount() {
         let s = this;
     }
 

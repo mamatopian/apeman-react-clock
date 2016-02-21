@@ -16,14 +16,14 @@ let ApAnalogClockHand = React.createClass({
         width: types.number,
         heightRate: types.number
     },
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             angle: 0,
             width: 24,
             heightRate: 1
         }
     },
-    render: function () {
+    render() {
         let s = this,
             props = s.props;
 

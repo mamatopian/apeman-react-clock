@@ -32,28 +32,28 @@ let ApAnalogClock = React.createClass({
     ],
 
     statics: {
-        _angleForValue: function (value, max) {
+        _angleForValue(value, max) {
             let rate = (value % max) / max;
             return chopcal.round(rate * 360, 0.1);
         },
-        hourHandAngle: function (date) {
+        hourHandAngle(date) {
             let hours = date.getHours();
             return ApAnalogClock._angleForValue(hours, 12);
         },
-        minuteHandAngle: function (date) {
+        minuteHandAngle(date) {
             let minutes = date.getMinutes();
             return ApAnalogClock._angleForValue(minutes, 60);
         },
-        secondHandAngle: function (date) {
+        secondHandAngle(date) {
             let seconds = date.getSeconds();
             return ApAnalogClock._angleForValue(seconds, 60);
         },
-        letterAngle: function (i, count) {
+        letterAngle(i, count) {
             return ApAnalogClock._angleForValue(i, count);
         }
     },
 
-    getInitialState: function () {
+    getInitialState() {
         return {
             hour: 0,
             minute: 0,
@@ -62,13 +62,13 @@ let ApAnalogClock = React.createClass({
         };
     },
 
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             boardLetters: '12,1,2,3,4,5,6,7,8,9,10,11'.split(',')
         };
     },
 
-    render: function () {
+    render() {
         let s = this,
             state = s.state,
             props = s.props;
@@ -120,12 +120,12 @@ let ApAnalogClock = React.createClass({
     // Lifecycle
     //--------------------
 
-    componentWillMount: function () {
+    componentWillMount() {
         let s = this;
         s._looping = true;
     },
 
-    componentDidMount: function () {
+    componentDidMount() {
         let s = this,
             props = s.props;
 
@@ -147,19 +147,19 @@ let ApAnalogClock = React.createClass({
         s.resizeClock();
     },
 
-    componentWillReceiveProps: function (nextProps) {
+    componentWillReceiveProps(nextProps) {
         let s = this;
     },
 
-    componentWillUpdate: function (nextProps, nextState) {
+    componentWillUpdate(nextProps, nextState) {
         let s = this;
     },
 
-    componentDidUpdate: function (prevProps, prevState) {
+    componentDidUpdate(prevProps, prevState) {
         let s = this;
     },
 
-    componentWillUnmount: function () {
+    componentWillUnmount() {
         let s = this;
         window.removeEventListener('resize', s.resizeClock);
         s._looping = false;
@@ -169,7 +169,7 @@ let ApAnalogClock = React.createClass({
     // Helper
     //------------------
 
-    resizeClock: function () {
+    resizeClock() {
         let s = this,
             elm = ReactDOM.findDOMNode(s);
         let size = numcal.min(elm.offsetWidth, elm.offsetHeight);

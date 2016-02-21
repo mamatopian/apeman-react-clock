@@ -24,7 +24,7 @@ let ApDigitalClockSubDisplay = React.createClass({
         width: types.number
     },
 
-    render: function () {
+    render() {
         let s = this,
             props = s.props;
 

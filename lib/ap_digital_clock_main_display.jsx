@@ -25,13 +25,13 @@ let ApDigitalClockMainDisplay = React.createClass({
         onSizeChange: types.func
     },
 
-    getInitialState: function () {
+    getInitialState() {
         return {
             detailWidth: null
         }
     },
 
-    render: function () {
+    render() {
         let s = this,
             state = s.state,
             props = s.props;
@@ -70,7 +70,7 @@ let ApDigitalClockMainDisplay = React.createClass({
     // Lifecycle
     //--------------------
 
-    componentWillReceiveProps: function () {
+    componentWillReceiveProps() {
         let s = this;
 
         setTimeout(()=> {

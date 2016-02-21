@@ -21,7 +21,7 @@ let ApDigitalClock = React.createClass({
         backgroundColor: types.string
 
     },
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             scoped: false,
             style: {},
@@ -31,7 +31,7 @@ let ApDigitalClock = React.createClass({
             backgroundColor: '#FFF'
         }
     },
-    render: function () {
+    render() {
         let s = this,
             props = s.props;
 
