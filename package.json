@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-clock",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "apeman react package for clock components.",
   "main": "lib",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/apeman-react-labo/apeman-react-clock#readme",
   "dependencies": {
+    "apeman-react-mixins": "^5.0.0",
     "apeman-react-style": "^3.0.0",
     "argx": "^2.0.2",
     "arrayreduce": "^2.1.0",
