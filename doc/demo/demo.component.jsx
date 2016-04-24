@@ -1,23 +1,23 @@
-"use strict";
+'use strict'
 
-const React = require('react');
+import React from 'react'
 
-const ApAnalogClock = require('../../lib/ap_analog_clock'),
-    ApDigitalLock = require('../../lib/ap_digital_clock');
+import ApAnalogClock from '../../lib/ap_analog_clock'
+import ApDigitalLock from '../../lib/ap_digital_clock'
 
-let Demo = React.createClass({
-    render: function () {
-        return (
-            <div style={{display:'flex'}}>
-                <div style={{width:'100%'}}>
-                    <ApAnalogClock></ApAnalogClock>
-                </div>
-                <div style={{width:'100%'}}>
-                    <ApDigitalLock></ApDigitalLock>
-                </div>
-            </div>
-        );
-    }
-});
+const Demo = React.createClass({
+  render () {
+    return (
+      <div style={ {display:'flex'} }>
+        <div style={ {width:'100%'} }>
+          <ApAnalogClock />
+        </div>
+        <div style={ {width:'100%'} }>
+          <ApDigitalLock/>
+        </div>
+      </div>
+    )
+  }
+})
 
-module.exports = Demo;
+module.exports = Demo

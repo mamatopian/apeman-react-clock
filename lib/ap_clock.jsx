@@ -3,86 +3,54 @@
  * @constructor ApClock
  */
 
-"use strict";
+'use strict'
 
-import React, {PropTypes as types} from 'react';
-import classnames from 'classnames';
+import React, {PropTypes as types} from 'react'
+import classnames from 'classnames'
 
 /** @lends ApClock */
-let ApClock = React.createClass({
+const ApClock = React.createClass({
 
+  // --------------------
+  // Specs
+  // --------------------
 
-    //--------------------
-    // Specs
-    //--------------------
+  propTypes: {},
 
-    propTypes: {},
+  mixins: [],
 
-    mixins: [],
+  statics: {},
 
-    statics: {
-    },
+  getInitialState () {
+    return {}
+  },
 
-    getInitialState() {
-        return {};
-    },
+  getDefaultProps () {
+    return {}
+  },
 
-    getDefaultProps() {
-        return {};
-    },
+  render () {
+    const s = this,
+      { props } = s
 
-    render() {
-        let s = this,
-            props = s.props;
+    return (
+      <div className={ classnames("ap-clock", props.className) }>
+        { props.children }
+      </div>
+    )
+  },
 
-        return (
-            <div className={classnames("ap-clock", props.className)}>
-                {props.children}
-            </div>
-        );
-    },
+  // --------------------
+  // Lifecycle
+  // --------------------
 
+  // ------------------
+  // Helper
+  // ------------------
 
-    //--------------------
-    // Lifecycle
-    //--------------------
+  // ------------------
+  // Private
+  // ------------------
+})
 
-    componentWillMount() {
-        let s = this;
-    },
-
-    componentDidMount() {
-        let s = this;
-    },
-
-    componentWillReceiveProps(nextProps) {
-        let s = this;
-    },
-
-    shouldComponentUpdate(nextProps, nextState) {
-        let s = this;
-        return true;
-    },
-
-    componentWillUpdate(nextProps, nextState) {
-        let s = this;
-    },
-
-    componentDidUpdate(prevProps, prevState) {
-        let s = this;
-    },
-
-    componentWillUnmount() {
-        let s = this;
-    }
-
-    //------------------
-    // Helper
-    //------------------
-
-    //------------------
-    // Private
-    //------------------
-});
-
-module.exports = ApClock;
+module.exports = ApClock

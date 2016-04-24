@@ -2,24 +2,23 @@
  * Test case for fonts.
  * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const fonts = require('../lib/fonts.js'),
-    assert = require('assert');
+const fonts = require('../lib/fonts.js')
+const assert = require('assert');
 
 describe('fonts', () => {
+  before((done) => {
+    done()
+  })
 
-    before((done) => {
-        done();
-    });
+  after((done) => {
+    done()
+  })
 
-    after((done) => {
-        done();
-    });
+  it('Fonts', (done) => {
+    done()
+  })
+})
 
-
-    it('Fonts', (done) => {
-        done();
-    });
-});
-
+/* global describe, before, after, it */

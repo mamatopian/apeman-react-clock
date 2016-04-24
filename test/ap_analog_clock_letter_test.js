@@ -2,24 +2,24 @@
  * Test case for apAnalogClockLetter.
  * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const apAnalogClockLetter = require('../lib/ap_analog_clock_letter.js'),
-    assert = require('assert');
+const ApAnalogClockLetter = require('../lib/ap_analog_clock_letter.js')
+const assert = require('assert');
 
 describe('ap-analog-clock-letter', () => {
-
     before((done) => {
-        done();
-    });
+        done()
+    })
 
     after((done) => {
-        done();
-    });
+        done()
+    })
 
 
     it('Ap analog clock letter', (done) => {
-        done();
-    });
-});
+        done()
+    })
+})
 
+/* global describe, before, after, it */

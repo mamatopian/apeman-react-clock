@@ -1,18 +1,15 @@
-"use strict";
+'use strict'
 
-const React = require('react'),
-    apemanReactClock = require('apeman-react-clock');
+import React from 'react'
+import {ApAnalogClock, ApAnalogClockStyle} from 'apeman-react-clock'
 
-const ApAnalogClock = apemanReactClock.ApAnalogClock,
-    ApAnalogClockStyle = apemanReactClock.ApAnalogClockStyle;
-
-let ExampleComponent = React.createClass({
-    render: function () {
-        return (
-            <div>
-                <ApAnalogClockStyle scoped></ApAnalogClockStyle>
-                <ApAnalogClock></ApAnalogClock>
-            </div>
-        )
-    }
-});
+const ExampleComponent = React.createClass({
+  render () {
+    return (
+      <div>
+        <ApAnalogClockStyle scoped />
+        <ApAnalogClock />
+      </div>
+    )
+  }
+})

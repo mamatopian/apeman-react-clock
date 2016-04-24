@@ -4,39 +4,37 @@
  */
 
 
-"use strict";
+'use strict'
 
-import React, {PropTypes as types} from 'react';
-import classnames from 'classnames';
+import React, {PropTypes as types} from 'react'
 
 /** @lends ApAnalogClockLetter */
-let ApAnalogClockLetter = React.createClass({
-    propTypes: {
-        angle: types.number,
-        letter: types.string
-    },
-    getDefaultProps() {
-        return {
-            angle: 0,
-            letter: ''
-        }
-    },
-    render() {
-        let s = this,
-            props = s.props;
-
-        let angle = props.angle,
-            letter = props.letter;
-
-        let containerStyle = {transform: `rotate(${angle}deg)`},
-            letterStyle = {transform: `rotate(${angle * -1}deg)`};
-        return (
-            <span className="ap-analog-letter"
-                  style={containerStyle}>
-                    <span className="ap-analog-letter-title" style={letterStyle}>{letter}</span>
-                </span>
-        );
+const ApAnalogClockLetter = React.createClass({
+  propTypes: {
+    angle: types.number,
+    letter: types.string
+  },
+  getDefaultProps () {
+    return {
+      angle: 0,
+      letter: ''
     }
-});
+  },
+  render () {
+    const s = this
+    let { props } = s
 
-module.exports = ApAnalogClockLetter;
+    let { angle, letter } = props
+
+    let containerStyle = { transform: `rotate(${angle}deg)` }
+    let letterStyle = { transform: `rotate(${angle * -1}deg)` }
+    return (
+      <span className="ap-analog-letter"
+            style={ containerStyle }>
+                    <span className="ap-analog-letter-title" style={ letterStyle }>{ letter }</span>
+                </span>
+    )
+  }
+})
+
+module.exports = ApAnalogClockLetter

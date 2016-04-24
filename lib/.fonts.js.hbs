@@ -1,9 +1,9 @@
-"use strict";
+'use strict'
 
-const path = require('path');
+const path = require('path')
 
-const fontsDir = __dirname + '/../asset/fonts';
+const fontsDir = __dirname + '/../asset/fonts'
 
 {{#each fonts}}
-exports.{{camelcase name}} = path.join(fontsDir, '{{filename}}');
+exports.{{camelcase name}} = path.join(fontsDir, '{{filename}}')
 {{/each}}

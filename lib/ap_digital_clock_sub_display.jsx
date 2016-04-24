@@ -3,46 +3,43 @@
  * @constructor ApDigitalClockSubDisplay
  */
 
-"use strict";
+'use strict'
 
-import React, {PropTypes as types} from 'react';
-import classnames from 'classnames';
-
+import React, {PropTypes as types} from 'react'
 
 /** @lends ApDigitalClockSubDisplay */
-let ApDigitalClockSubDisplay = React.createClass({
+const ApDigitalClockSubDisplay = React.createClass({
 
-    //--------------------
-    // Specs
-    //--------------------
+  // --------------------
+  // Specs
+  // --------------------
 
-    propTypes: {
-        day: types.string,
-        fontSize: types.number,
-        width: types.number
-    },
+  propTypes: {
+    day: types.string,
+    fontSize: types.number,
+    width: types.number
+  },
 
-    render() {
-        let s = this,
-            props = s.props;
+  render () {
+    const s = this
+    let { props } = s
 
-        let fontSize = props.fontSize,
-            width = props.width;
+    let { fontSize, width } = props
 
-        let displayStyle = {
-            fontSize: `${fontSize}px`
-        }, labelStyle = {
-            width: `${width}px`
-        };
-
-        return (
-            <div className="ap-digital-clock-sub-display" style={displayStyle}>
-                <div className="ap-digital-clock-sub-label" style={labelStyle}>
-                    <span>{props.day}</span>
-                </div>
-            </div>
-        );
+    let displayStyle = {
+      fontSize: `${fontSize}px`
+    }, labelStyle = {
+      width: `${width}px`
     }
-});
 
-module.exports = ApDigitalClockSubDisplay;
+    return (
+      <div className="ap-digital-clock-sub-display" style={ displayStyle }>
+        <div className="ap-digital-clock-sub-label" style={ labelStyle }>
+          <span>{props.day}</span>
+        </div>
+      </div>
+    )
+  }
+})
+
+module.exports = ApDigitalClockSubDisplay

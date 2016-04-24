@@ -2,24 +2,24 @@
  * Test case for apAnalogClockStyle.
  * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const apAnalogClockStyle = require('../lib/ap_analog_clock_style.js'),
-    assert = require('assert');
+const ApAnalogClockStyle = require('../lib/ap_analog_clock_style.js')
+const assert = require('assert');
 
 describe('ap-analog-clock-style', () => {
-
     before((done) => {
-        done();
-    });
+        done()
+    })
 
     after((done) => {
-        done();
-    });
+        done()
+    })
 
 
     it('Ap analog clock style', (done) => {
-        done();
-    });
-});
+        done()
+    })
+})
 
+/* global describe, before, after, it */

@@ -2,24 +2,23 @@
  * Test case for apDigitalClockStyle.
  * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const apDigitalClockStyle = require('../lib/ap_digital_clock_style.js'),
-    assert = require('assert');
+const ApDigitalClockStyle = require('../lib/ap_digital_clock_style.js')
+const assert = require('assert');
 
 describe('ap-digital-clock-style', () => {
+  before((done) => {
+    done()
+  })
 
-    before((done) => {
-        done();
-    });
+  after((done) => {
+    done()
+  })
 
-    after((done) => {
-        done();
-    });
+  it('Ap digital clock style', (done) => {
+    done()
+  })
+})
 
-
-    it('Ap digital clock style', (done) => {
-        done();
-    });
-});
-
+/* global describe, before, after, it */

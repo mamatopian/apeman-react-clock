@@ -2,24 +2,24 @@
  * Test case for apDigitalClockSubDisplay.
  * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const apDigitalClockSubDisplay = require('../lib/ap_digital_clock_sub_display.js'),
-    assert = require('assert');
+const ApDigitalClockSubDisplay = require('../lib/ap_digital_clock_sub_display.js')
+const assert = require('assert');
 
 describe('ap-digital-clock-sub-display', () => {
-
     before((done) => {
-        done();
-    });
+        done()
+    })
 
     after((done) => {
-        done();
-    });
+        done()
+    })
 
 
     it('Ap digital clock sub display', (done) => {
-        done();
-    });
-});
+        done()
+    })
+})
 
+/* global describe, before, after, it */
