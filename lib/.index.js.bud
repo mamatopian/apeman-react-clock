@@ -12,16 +12,7 @@ module.exports = apeTmpl.indexJsBud({
   desc: pkg.description,
   dirname: __dirname,
   subclasses: [
-    'ApClock',
-    'ApClockStyle',
-    'ApAnalogClock',
-    'ApAnalogClockHand',
-    'ApAnalogClockLetter',
-    'ApAnalogClockStyle',
-    'ApDigitalClock',
-    'ApDigitalClockMainDisplay',
-    'ApDigitalClockStyle',
-    'ApDigitalClockSubDisplay'
+    '*'
   ]
 })
 

@@ -1,6 +1,6 @@
 /**
  * A hand for analog clock.
- * @constructor ApAnalogClockHand
+ * @class ApAnalogClockHand
  */
 
 'use strict'
@@ -44,4 +44,4 @@ const ApAnalogClockHand = React.createClass({
   }
 })
 
-module.exports = ApAnalogClockHand
+export default ApAnalogClockHand

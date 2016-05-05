@@ -1,6 +1,6 @@
 /**
  * Abstract clock.
- * @constructor ApClock
+ * @class ApClock
  */
 
 'use strict'
@@ -53,4 +53,4 @@ const ApClock = React.createClass({
   // ------------------
 })
 
-module.exports = ApClock
+export default ApClock

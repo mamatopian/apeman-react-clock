@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const fonts = require('../lib/fonts.js')
-const assert = require('assert');
+const fonts = require('../lib/fonts.js').default
+const assert = require('assert')
 
 describe('fonts', () => {
   before((done) => {

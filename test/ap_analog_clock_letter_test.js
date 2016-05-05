@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const ApAnalogClockLetter = require('../lib/ap_analog_clock_letter.js')
-const assert = require('assert');
+const ApAnalogClockLetter = require('../lib/ap_analog_clock_letter.js').default
+const assert = require('assert')
 
 describe('ap-analog-clock-letter', () => {
     before((done) => {

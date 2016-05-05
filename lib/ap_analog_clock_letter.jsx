@@ -1,6 +1,6 @@
 /**
  * A letter for analog clock.
- * @constructor ApAnalogClockLetter
+ * @class ApAnalogClockLetter
  */
 
 
@@ -37,4 +37,4 @@ const ApAnalogClockLetter = React.createClass({
   }
 })
 
-module.exports = ApAnalogClockLetter
+export default ApAnalogClockLetter

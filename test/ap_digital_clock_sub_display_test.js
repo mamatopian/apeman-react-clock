@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const ApDigitalClockSubDisplay = require('../lib/ap_digital_clock_sub_display.js')
-const assert = require('assert');
+const ApDigitalClockSubDisplay = require('../lib/ap_digital_clock_sub_display.js').default
+const assert = require('assert')
 
 describe('ap-digital-clock-sub-display', () => {
     before((done) => {

@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const ApDigitalClockMainDisplay = require('../lib/ap_digital_clock_main_display.js')
-const assert = require('assert');
+const ApDigitalClockMainDisplay = require('../lib/ap_digital_clock_main_display.js').default
+const assert = require('assert')
 
 describe('ap-digital-clock-main-display', () => {
   before((done) => {

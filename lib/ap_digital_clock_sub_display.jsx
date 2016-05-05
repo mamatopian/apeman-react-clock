@@ -1,6 +1,6 @@
 /**
  * Sub display for digital clock
- * @constructor ApDigitalClockSubDisplay
+ * @class ApDigitalClockSubDisplay
  */
 
 'use strict'
@@ -42,4 +42,4 @@ const ApDigitalClockSubDisplay = React.createClass({
   }
 })
 
-module.exports = ApDigitalClockSubDisplay
+export default ApDigitalClockSubDisplay

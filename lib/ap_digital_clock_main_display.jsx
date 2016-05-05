@@ -1,6 +1,6 @@
 /**
  * Main display for digital clock
- * @constructor ApDigitalClockMainDisplay
+ * @class ApDigitalClockMainDisplay
  */
 
 'use strict'
@@ -91,4 +91,4 @@ const ApDigitalClockMainDisplay = React.createClass({
   }
 })
 
-module.exports = ApDigitalClockMainDisplay
+export default ApDigitalClockMainDisplay

@@ -33,3 +33,5 @@ node_modules
 .idea
 tmp
 
+!lib/*.js
+doc/demo

@@ -1,6 +1,6 @@
 /**
  * Style for ApClock.
- * @constructor ApClockStyle
+ * @class ApClockStyle
  */
 
 'use strict'
@@ -11,12 +11,12 @@ import {ApStyle} from 'apeman-react-style'
 /** @lends ApClockStyle */
 const ApClockStyle = React.createClass({
   propTypes: {
-    scoped: types.bool,
+    
     style: types.object
   },
   getDefaultProps () {
     return {
-      scoped: false,
+      
       style: {}
     }
   },
@@ -28,7 +28,7 @@ const ApClockStyle = React.createClass({
     let mediumMediaData = {}
     let largeMediaData = {}
     return (
-      <ApStyle scoped={ props.scoped }
+      <ApStyle 
                data={ Object.assign(data, props.style) }
                smallMediaData={ smallMediaData }
                mediumMediaData={ mediumMediaData }
@@ -38,4 +38,4 @@ const ApClockStyle = React.createClass({
   }
 })
 
-module.exports = ApClockStyle
+export default ApClockStyle

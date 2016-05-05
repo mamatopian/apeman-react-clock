@@ -1,6 +1,6 @@
 /**
  * Analog clock.
- * @constructor ApAnalogClock
+ * @class ApAnalogClock
  */
 
 'use strict'
@@ -167,4 +167,4 @@ const ApAnalogClock = React.createClass({
   // ------------------
 })
 
-module.exports = ApAnalogClock
+export default ApAnalogClock

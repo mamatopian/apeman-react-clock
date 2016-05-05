@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const ApAnalogClockHand = require('../lib/ap_analog_clock_hand.js')
-const assert = require('assert');
+const ApAnalogClockHand = require('../lib/ap_analog_clock_hand.js').default
+const assert = require('assert')
 
 describe('ap-analog-clock-hand', () => {
   before((done) => {

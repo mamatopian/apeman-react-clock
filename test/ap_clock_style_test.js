@@ -4,10 +4,10 @@
  */
 'use strict'
 
-const ApClockStyle = require('../lib/ap_clock_style.js')
-const React = require('react');
-const ReactDOM = require('react-dom/server');
-const assert = require('assert');
+const ApClockStyle = require('../lib/ap_clock_style.js').default
+const React = require('react')
+const ReactDOM = require('react-dom/server')
+const assert = require('assert')
 
 describe('ap-clock-style', () => {
   before((done) => {

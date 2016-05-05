@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const ApDigitalClockStyle = require('../lib/ap_digital_clock_style.js')
-const assert = require('assert');
+const ApDigitalClockStyle = require('../lib/ap_digital_clock_style.js').default
+const assert = require('assert')
 
 describe('ap-digital-clock-style', () => {
   before((done) => {

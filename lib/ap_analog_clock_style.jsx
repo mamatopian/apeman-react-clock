@@ -1,6 +1,6 @@
 /**
  * Style for ApAnalogClock.
- * @constructor ApAnalogClockStyle
+ * @class ApAnalogClockStyle
  */
 
 'use strict'
@@ -12,7 +12,6 @@ import {ApStyle} from 'apeman-react-style'
 /** @lends ApAnalogClockStyle */
 const ApAnalogClockStyle = React.createClass({
   propTypes: {
-    scoped: types.bool,
     style: types.object,
     width: types.number,
     height: types.number,
@@ -22,7 +21,7 @@ const ApAnalogClockStyle = React.createClass({
   },
   getDefaultProps () {
     return {
-      scoped: false,
+
       style: {},
       width: 320,
       height: 240,
@@ -126,8 +125,7 @@ const ApAnalogClockStyle = React.createClass({
     let mediumMediaData = {}
     let largeMediaData = {}
     return (
-      <ApStyle scoped={ props.scoped }
-               data={ Object.assign(data, props.style) }
+      <ApStyle data={ Object.assign(data, props.style) }
                smallMediaData={ smallMediaData }
                mediumMediaData={ mediumMediaData }
                largeMediaData={ largeMediaData }
@@ -136,4 +134,4 @@ const ApAnalogClockStyle = React.createClass({
   }
 })
 
-module.exports = ApAnalogClockStyle
+export default ApAnalogClockStyle

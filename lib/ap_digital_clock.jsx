@@ -1,6 +1,6 @@
 /**
  * Digital clock
- * @constructor ApDigitalLock
+ * @class ApDigitalLock
  */
 
 'use strict'
@@ -158,4 +158,4 @@ const ApDigitalLock = React.createClass({
 
 })
 
-module.exports = ApDigitalLock
+export default ApDigitalLock

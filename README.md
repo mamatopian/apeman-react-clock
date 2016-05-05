@@ -120,9 +120,9 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| angle | number | 0 |  |
-| width | number | 24 |  |
-| heightRate | number | 1 |  |
+| angle | number | 0 | |  |
+| width | number | 24 | |  |
+| heightRate | number | 1 | |  |
 
 ### ApAnalogClockLetter
 
@@ -130,8 +130,8 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| angle | number | 0 |  |
-| letter | string | '' |  |
+| angle | number | 0 | |  |
+| letter | string | &#x27;&#x27; | |  |
 
 ### ApAnalogClockStyle
 
@@ -139,13 +139,12 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| scoped | bool | false |  |
-| style | object | {} |  |
-| width | number | 320 |  |
-| height | number | 240 |  |
-| color | string | '#333' |  |
-| accentColor | string | '#F33' |  |
-| backgroundColor | string | '#FFF' |  |
+| style | object | {} | |  |
+| width | number | 320 | |  |
+| height | number | 240 | |  |
+| color | string | &#x27;#333&#x27; | |  |
+| accentColor | string | &#x27;#F33&#x27; | |  |
+| backgroundColor | string | &#x27;#FFF&#x27; | |  |
 
 ### ApAnalogClock
 
@@ -153,7 +152,7 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| boardLetters | array | '12,1,2,3,4,5,6,7,8,9,10,11'.split(',') |  |
+| boardLetters | array | &#x27;12,1,2,3,4,5,6,7,8,9,10,11&#x27;.split(&#x27;,&#x27;) | |  |
 
 ### ApClockStyle
 
@@ -161,8 +160,7 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| scoped | bool | false |  |
-| style | object | {} |  |
+| style | object | {} | |  |
 
 ### ApClock
 
@@ -177,11 +175,11 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| hours | string |  |  |
-| minutes | string |  |  |
-| seconds | string |  |  |
-| fontSize | number |  |  |
-| onSizeChange | func |  |  |
+| hours | string |  | |  |
+| minutes | string |  | |  |
+| seconds | string |  | |  |
+| fontSize | number |  | |  |
+| onSizeChange | func |  | |  |
 
 ### ApDigitalClockStyle
 
@@ -189,12 +187,11 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| scoped | bool | false |  |
-| style | object | {} |  |
-| width | number | 340 |  |
-| height | number | 240 |  |
-| color | string | '#333' |  |
-| backgroundColor | string | '#FFF' |  |
+| style | object | {} | |  |
+| width | number | 340 | |  |
+| height | number | 240 | |  |
+| color | string | &#x27;#333&#x27; | |  |
+| backgroundColor | string | &#x27;#FFF&#x27; | |  |
 
 ### ApDigitalClockSubDisplay
 
@@ -202,9 +199,9 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| day | string |  |  |
-| fontSize | number |  |  |
-| width | number |  |  |
+| day | string |  | |  |
+| fontSize | number |  | |  |
+| width | number |  | |  |
 
 ### ApDigitalClock
 
@@ -212,7 +209,7 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| showSeconds | bool | true |  |
+| showSeconds | bool | true | |  |
 
 
 
