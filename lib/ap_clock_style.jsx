@@ -11,28 +11,31 @@ import {ApStyle} from 'apeman-react-style'
 /** @lends ApClockStyle */
 const ApClockStyle = React.createClass({
   propTypes: {
-    
     style: types.object
   },
   getDefaultProps () {
     return {
-      
       style: {}
+    }
+  },
+  statics: {
+    styleData (config) {
+      return {
+        all: {}
+      }
     }
   },
   render () {
     const s = this
     let { props } = s
-    let data = {}
-    let smallMediaData = {}
-    let mediumMediaData = {}
-    let largeMediaData = {}
+
+    let { all, small, medium, large } = ApClockStyle.styleData(props)
+
     return (
-      <ApStyle 
-               data={ Object.assign(data, props.style) }
-               smallMediaData={ smallMediaData }
-               mediumMediaData={ mediumMediaData }
-               largeMediaData={ largeMediaData }
+      <ApStyle data={ Object.assign(all, props.style) }
+               smallMediaData={ small }
+               mediumMediaData={ medium }
+               largeMediaData={ large }
       >{ props.children }</ApStyle>
     )
   }

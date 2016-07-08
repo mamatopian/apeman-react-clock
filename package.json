@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-clock",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "apeman react package for clock components.",
   "main": "lib",
   "scripts": {
@@ -23,14 +23,14 @@
   },
   "homepage": "https://github.com/apeman-react-labo/apeman-react-clock#readme",
   "dependencies": {
-    "apeman-react-mixins": "^5.1.6",
-    "apeman-react-style": "^4.0.4",
+    "apeman-react-mixin-pure": "^1.0.2",
+    "apeman-react-style": "^4.1.2",
     "arrayreduce": "^2.1.0",
     "chopcal": "^2.0.0",
     "classnames": "^2.2.5",
     "co": "^4.6.0",
     "expandglob": "^3.0.2",
-    "moment": "^2.13.0",
+    "moment": "^2.14.1",
     "numcal": "^3.1.0"
   },
   "devDependencies": {
@@ -43,10 +43,10 @@
     "ape-tasking": "^4.0.3",
     "ape-testing": "^4.0.0",
     "ape-tmpl": "^5.0.11",
-    "ape-updating": "^4.0.2",
+    "ape-updating": "^4.0.4",
     "ape-watching": "^2.1.1",
-    "apeman-asset-javascripts": "^3.1.23",
-    "apeman-react-demo": "^1.0.18",
+    "apeman-asset-javascripts": "^3.1.49",
+    "apeman-react-demo": "^1.0.19",
     "coz": "^6.0.3",
     "filecopy": "^2.0.0",
     "filelink": "^3.0.3",

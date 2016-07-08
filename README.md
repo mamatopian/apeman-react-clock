@@ -214,7 +214,6 @@ Components
 | showSeconds | bool | true | |  |
 
 
-
 <!-- Section from "doc/guides/04.Components.md.hbs" End -->
 
 

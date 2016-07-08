@@ -7,7 +7,6 @@
 
 import React, {PropTypes as types} from 'react'
 import ReactDOM from 'react-dom'
-import classnames from 'classnames'
 
 /** @lends ApDigitalClockMainDisplay */
 const ApDigitalClockMainDisplay = React.createClass({

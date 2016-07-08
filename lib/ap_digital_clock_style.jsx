@@ -28,67 +28,71 @@ const ApDigitalClock = React.createClass({
       backgroundColor: '#FFF'
     }
   },
+  statics: {
+    styleData (config) {
+      let {
+        width,
+        height,
+        color,
+        backgroundColor
+      } = config
+      return {
+        all: {
+          '.ap-digital-clock': {
+            color: color,
+            width: width,
+            height: height,
+            display: 'block',
+            margin: '0 auto',
+            textAlign: 'center'
+          },
+          '.ap-digital-clock-board': {
+            backgroundColor: backgroundColor,
+            display: 'inline-block',
+            border: `2px solid ${color}`,
+            position: 'relative',
+            background: `${backgroundColor}`
+          },
+          '.ap-digital-clock-board-inner': {
+            display: 'inline-block',
+            verticalAlign: 'middle'
+          },
+          '.ap-digital-clock-dummy-text': {
+            opacity: 0,
+            width: 1,
+            display: 'inline-block',
+            verticalAlign: 'middle',
+            marginRight: '-1px',
+            whiteSpace: 'pre',
+            overflow: 'hidden'
+          },
+          '.ap-digital-clock-main-display': {},
+          '.ap-digital-clock-sub-display': {
+            overflow: 'hidden',
+            textAlign: 'right'
+          },
+          '.ap-digital-clock-sub-label': {
+            display: 'block',
+            margin: '2px auto'
+          }
+        }
+      }
+    }
+  },
   render () {
     const s = this
     let { props } = s
 
-    let {
-      width,
-      height,
-      color,
-      backgroundColor
-    } = props
+    let { all, small, medium, large } = ApDigitalClock.styleData(props)
 
-    let data = {
-      '.ap-digital-clock': {
-        color: color,
-        width: width,
-        height: height,
-        display: 'block',
-        margin: '0 auto',
-        textAlign: 'center'
-      },
-      '.ap-digital-clock-board': {
-        backgroundColor: backgroundColor,
-        display: 'inline-block',
-        border: `2px solid ${color}`,
-        position: 'relative',
-        background: `${backgroundColor}`
-      },
-      '.ap-digital-clock-board-inner': {
-        display: 'inline-block',
-        verticalAlign: 'middle'
-      },
-      '.ap-digital-clock-dummy-text': {
-        opacity: 0,
-        width: 1,
-        display: 'inline-block',
-        verticalAlign: 'middle',
-        marginRight: '-1px',
-        whiteSpace: 'pre',
-        overflow: 'hidden'
-      },
-      '.ap-digital-clock-main-display': {},
-      '.ap-digital-clock-sub-display': {
-        overflow: 'hidden',
-        textAlign: 'right'
-      },
-      '.ap-digital-clock-sub-label': {
-        display: 'block',
-        margin: '2px auto'
-      }
-    }
-    let smallMediaData = {}
-    let mediumMediaData = {}
-    let largeMediaData = {}
     return (
-      <ApStyle data={ Object.assign(data, props.style) }
-               smallMediaData={ smallMediaData }
-               mediumMediaData={ mediumMediaData }
-               largeMediaData={ largeMediaData }
+      <ApStyle data={ Object.assign(all, props.style) }
+               smallMediaData={ small }
+               mediumMediaData={ medium }
+               largeMediaData={ large }
       >{ props.children }</ApStyle>
     )
   }
 })
 
-export default ApDigitalClock;
+export default ApDigitalClock

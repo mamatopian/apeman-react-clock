@@ -3,7 +3,6 @@
  * @class ApAnalogClockLetter
  */
 
-
 'use strict'
 
 import React, {PropTypes as types} from 'react'

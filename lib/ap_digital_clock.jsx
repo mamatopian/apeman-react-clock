@@ -13,7 +13,7 @@ import ApClock from './ap_clock'
 import ApDigitalClockMainDisplay from './ap_digital_clock_main_display'
 import ApDigitalClockSubDisplay from './ap_digital_clock_sub_display'
 import moment from 'moment'
-import {ApPureMixin} from 'apeman-react-mixins'
+import {ApPureMixin} from 'apeman-react-mixin-pure'
 import numcal from 'numcal'
 
 /** @lends ApDigitalLock */
