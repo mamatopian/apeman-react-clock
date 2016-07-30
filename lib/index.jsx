@@ -1,7 +1,7 @@
 /**
  * apeman react package for clock components.
  * @module apeman-react-clock
- * @version 3.0.1
+ * @version 3.0.2
  */
 'use strict'
 

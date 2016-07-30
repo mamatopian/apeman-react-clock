@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-clock",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "apeman react package for clock components.",
   "main": "shim/node",
   "scripts": {
@@ -26,7 +26,7 @@
     "apeman-react-mixin-pure": "^1.0.4",
     "apeman-react-style": "^4.1.3",
     "arrayreduce": "^2.1.0",
-    "chopcal": "^3.0.0",
+    "chopcal": "^3.0.1",
     "classnames": "^2.2.5",
     "co": "^4.6.0",
     "moment": "^2.14.1",
