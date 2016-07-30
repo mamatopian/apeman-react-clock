@@ -37,6 +37,7 @@
     "ababel-es2015": "^1.0.5",
     "ababel-react": "^1.0.5",
     "abrowserify": "^1.0.18",
+    "aglob": "^1.0.1",
     "amocha": "^1.0.10",
     "ape-capturing": "^1.0.4",
     "ape-deploying": "^5.0.4",

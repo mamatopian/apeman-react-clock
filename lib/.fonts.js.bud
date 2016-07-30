@@ -1,6 +1,6 @@
 'use strict'
 
-const expandglob = require('expandglob')
+const aglob = require('aglob')
 const path = require('path')
 
 const fontsDir = __dirname + '/../asset/fonts'
@@ -21,7 +21,7 @@ module.exports = {
   mode: '444',
   data: {
     get fonts () {
-      return expandglob.sync('**/+(*.ttf|*.TTF)', { cwd: fontsDir }).map(function (filename, i) {
+      return aglob.sync('**/+(*.ttf|*.TTF)', { cwd: fontsDir }).map(function (filename, i) {
         return {
           name: _theme(i),
           filename: filename
