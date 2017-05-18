@@ -17,7 +17,8 @@ const ApAnalogClockStyle = React.createClass({
     height: types.number,
     color: types.string,
     accentColor: types.string,
-    backgroundColor: types.string
+    backgroundColor: types.string,
+    backgroundColorNight: types.string
   },
   getDefaultProps () {
     return {
@@ -26,12 +27,13 @@ const ApAnalogClockStyle = React.createClass({
       height: 240,
       color: '#333',
       accentColor: '#F33',
-      backgroundColor: '#FFF'
+      backgroundColor: '#FFF',
+      backgroundColorNight: '#333',
     }
   },
   statics: {
     styleData (config) {
-      let { width, height, color, accentColor, backgroundColor } = config
+      let { width, height, color, accentColor, backgroundColor, backgroundColorNight } = config
       let boardPadding = 18
       return {
         all: {
@@ -52,6 +54,9 @@ const ApAnalogClockStyle = React.createClass({
             borderRadius: '50%',
             backgroundColor: `${backgroundColor}`
           },
+		  '.ap-analog-clock-board-night': {
+			backgroundColor: `${backgroundColorNight} `
+		  },
           '.ap-analog-clock-board-inner': {
             position: 'absolute',
             left: boardPadding,

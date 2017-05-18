@@ -151,6 +151,7 @@ Components
 | color | string | &#x27;#333&#x27; | |  |
 | accentColor | string | &#x27;#F33&#x27; | |  |
 | backgroundColor | string | &#x27;#FFF&#x27; | |  |
+| backgroundColorNight | string | &#x27;#333&#x27; | |  |
 
 ### ApAnalogClock
 
@@ -160,6 +161,7 @@ Components
 | ---- | ---- | ------- | ----------- |
 | boardLetters | array | &#x27;12,1,2,3,4,5,6,7,8,9,10,11&#x27;.split(&#x27;,&#x27;) | |  |
 | timezone | string | &#x27;&#x27; | |  |
+| dayNightColorsSwitch | bool | true | |  |
 
 ### ApClockStyle
 

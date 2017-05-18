@@ -14,7 +14,7 @@ const Demo = React.createClass({
         <ApAnalogClockStyle highlightColor="b35600"/>
         <ApDigitalLockStyle highlightColor="b35600"/>
         <div style={ {width: '100%'} }>
-          <ApAnalogClock timezone={'Europe/London'} />
+          <ApAnalogClock timezone={'Europe/Moscow'} dayNightColorsSwitch={true} />
         </div>
         <div style={ {width:'100%'} }>
           <ApDigitalLock timezone={'America/New_York'}/>

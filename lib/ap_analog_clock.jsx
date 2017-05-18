@@ -24,8 +24,9 @@ const ApAnalogClock = React.createClass({
   // --------------------
 
   propTypes: {
-    boardLetters: types.array,
-	timezone: types.string
+	boardLetters: types.array,
+	timezone: types.string,
+	dayNightColorsSwitch: types.bool
   },
 
   mixins: [
@@ -37,6 +38,10 @@ const ApAnalogClock = React.createClass({
       let rate = (value % max) / max
       return chopcal.round(rate * 360, 0.1)
     },
+	isNight (date, timezone){
+	  let hours = timezone ? moment.tz(timezone).format('H') : date.getHours()
+	  return hours >= 20 || hours <= 5
+	},
 	hourHandAngle (date, timezone) {
 	  let hours = timezone ? moment.tz(timezone).format('h') : date.getHours()
 	  return ApAnalogClock._angleForValue(hours, 12)
@@ -66,7 +71,8 @@ const ApAnalogClock = React.createClass({
   getDefaultProps () {
     return {
       boardLetters: '12,1,2,3,4,5,6,7,8,9,10,11'.split(','),
-	  timezone: ''
+	  timezone: '',
+	  dayNightColorsSwitch: true
 	}
   },
 
@@ -92,9 +98,11 @@ const ApAnalogClock = React.createClass({
 
     let screwSize = 9
 
+	let nightClass = state.isNight && props.dayNightColorsSwitch ? "ap-analog-clock-board-night" : ""
+
     return (
       <ApClock className={ classnames("ap-analog-clock", props.className) }>
-        <div className="ap-analog-clock-board" style={boardStyle}>
+		<div className={ classnames("ap-analog-clock-board", nightClass) } style={ boardStyle }>
           <div className="ap-analog-clock-board-inner">
             <ApAnalogClockHand className="ap-analog-clock-hand-hour" width={ 4 } heightRate={ 0.8 }
                                angle={ state.hour }/>
@@ -136,6 +144,7 @@ const ApAnalogClock = React.createClass({
       let now = new Date()
 	  let timezone = props.timezone;
 	  s.setState({
+		isNight: ApAnalogClock.isNight(now, timezone),
 		hour: ApAnalogClock.hourHandAngle(now, timezone),
 		minute: ApAnalogClock.minuteHandAngle(now, timezone),
 		second: ApAnalogClock.secondHandAngle(now, timezone)
