@@ -159,6 +159,7 @@ Components
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
 | boardLetters | array | &#x27;12,1,2,3,4,5,6,7,8,9,10,11&#x27;.split(&#x27;,&#x27;) | |  |
+| timezone | string | &#x27;&#x27; | |  |
 
 ### ApClockStyle
 
@@ -216,6 +217,7 @@ Components
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
 | showSeconds | bool | true | |  |
+| timezone | string |  | |  |
 
 
 <!-- Section from "doc/guides/04.Components.md.hbs" End -->

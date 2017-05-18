@@ -18,7 +18,7 @@ describe('ap-digital-clock', () => {
 
   it('Render a component', () => {
     let element = shallow(
-      <ApDigitalClock/>
+      <ApDigitalClock timezone={'Europe/London'}/>
     )
     assert.ok(element)
   })

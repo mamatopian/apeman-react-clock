@@ -1,9 +1,10 @@
 /**
  * apeman react package for clock components.
  * @module apeman-react-clock
- * @version 3.0.3
+ * @version 3.0.4
  */
 'use strict'
+
 
 import ApAnalogClockHand from './ap_analog_clock_hand'
 import ApAnalogClockLetter from './ap_analog_clock_letter'

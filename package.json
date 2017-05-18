@@ -30,6 +30,7 @@
     "classnames": "^2.2.5",
     "co": "^4.6.0",
     "moment": "^2.14.1",
+    "moment-timezone": "^0.5.13",
     "numcal": "^3.1.4"
   },
   "devDependencies": {

@@ -14,6 +14,7 @@ import chopcal from 'chopcal'
 import numcal from 'numcal'
 import ApAnalogClockHand from './ap_analog_clock_hand'
 import ApAnalogClockLetter from './ap_analog_clock_letter'
+import moment from 'moment-timezone'
 
 /** @lends ApAnalogClock */
 const ApAnalogClock = React.createClass({
@@ -23,7 +24,8 @@ const ApAnalogClock = React.createClass({
   // --------------------
 
   propTypes: {
-    boardLetters: types.array
+    boardLetters: types.array,
+	timezone: types.string
   },
 
   mixins: [
@@ -35,18 +37,18 @@ const ApAnalogClock = React.createClass({
       let rate = (value % max) / max
       return chopcal.round(rate * 360, 0.1)
     },
-    hourHandAngle (date) {
-      let hours = date.getHours()
-      return ApAnalogClock._angleForValue(hours, 12)
-    },
-    minuteHandAngle (date) {
-      let minutes = date.getMinutes()
-      return ApAnalogClock._angleForValue(minutes, 60)
-    },
-    secondHandAngle (date) {
-      let seconds = date.getSeconds()
-      return ApAnalogClock._angleForValue(seconds, 60)
-    },
+	hourHandAngle (date, timezone) {
+	  let hours = timezone ? moment.tz(timezone).format('h') : date.getHours()
+	  return ApAnalogClock._angleForValue(hours, 12)
+	},
+	minuteHandAngle (date, timezone) {
+	  let minutes = timezone ? moment.tz(timezone).format('m') : date.getMinutes()
+	  return ApAnalogClock._angleForValue(minutes, 60)
+	},
+	secondHandAngle (date, timezone) {
+	  let seconds = timezone ? moment.tz(timezone).format('s') : date.getSeconds()
+	  return ApAnalogClock._angleForValue(seconds, 60)
+	},
     letterAngle (i, count) {
       return ApAnalogClock._angleForValue(i, count)
     }
@@ -63,8 +65,9 @@ const ApAnalogClock = React.createClass({
 
   getDefaultProps () {
     return {
-      boardLetters: '12,1,2,3,4,5,6,7,8,9,10,11'.split(',')
-    }
+      boardLetters: '12,1,2,3,4,5,6,7,8,9,10,11'.split(','),
+	  timezone: ''
+	}
   },
 
   render () {
@@ -131,11 +134,12 @@ const ApAnalogClock = React.createClass({
         return
       }
       let now = new Date()
-      s.setState({
-        hour: ApAnalogClock.hourHandAngle(now),
-        minute: ApAnalogClock.minuteHandAngle(now),
-        second: ApAnalogClock.secondHandAngle(now)
-      })
+	  let timezone = props.timezone;
+	  s.setState({
+		hour: ApAnalogClock.hourHandAngle(now, timezone),
+		minute: ApAnalogClock.minuteHandAngle(now, timezone),
+		second: ApAnalogClock.secondHandAngle(now, timezone)
+	  })
       window.requestAnimationFrame(_loop)
     }
 

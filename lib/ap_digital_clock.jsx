@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom'
 import ApClock from './ap_clock'
 import ApDigitalClockMainDisplay from './ap_digital_clock_main_display'
 import ApDigitalClockSubDisplay from './ap_digital_clock_sub_display'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import {ApPureMixin} from 'apeman-react-mixin-pure'
 import numcal from 'numcal'
 
@@ -24,7 +24,8 @@ const ApDigitalLock = React.createClass({
   // --------------------
 
   propTypes: {
-    showSeconds: types.bool
+	showSeconds: types.bool,
+	timezone: types.string
   },
 
   mixins: [
@@ -115,13 +116,13 @@ const ApDigitalLock = React.createClass({
         return
       }
       let now = new Date()
-
-      s.setState({
-        hours: padZero(now.getHours(), 2),
-        minutes: padZero(now.getMinutes(), 2),
-        seconds: padZero(now.getSeconds(), 2),
-        day: moment(now).format('LL')
-      })
+	  let timezone = props.timezone
+	  s.setState({
+		hours: padZero(timezone ? moment.tz(timezone).format('h') : now.getHours(), 2),
+		minutes: padZero(timezone ? moment.tz(timezone).format('m') : now.getMinutes(), 2),
+		seconds: padZero(timezone ? moment.tz(timezone).format('s') : now.getSeconds(), 2),
+		day: timezone ? moment.tz(timezone).format('LL') : moment(now).format('LL')
+	  })
       window.requestAnimationFrame(_loop)
     }
 
